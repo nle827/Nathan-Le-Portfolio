@@ -14,8 +14,6 @@ const imageFitConfig = {
   galleryFits: ["fill", "fill", "fill"],
 };
 
-const galleryAspectRatios = ["16-9", "16-9", "16-9"]; 
-
 export default function ProjectDetailsPage({
   params,
 }: {
