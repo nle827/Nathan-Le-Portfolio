@@ -13,13 +13,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "noImplicitAny": false,          // Allow 'any' types
-    "noUnusedLocals": false,         // Ignore unused variables
-    "noUnusedParameters": false,     // Ignore unused function parameters
+    "noImplicitAny": false,          // Ignore 'any' type
+    "noUnusedLocals": false,         // Ignore unused vars
+    "noUnusedParameters": false,     // Ignore unused function params
     "plugins": [
-      {
-        "name": "next"
-      }
+      { "name": "next" }
     ],
     "paths": {
       "@/*": ["./src/*"]
