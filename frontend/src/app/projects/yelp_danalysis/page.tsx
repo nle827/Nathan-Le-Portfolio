@@ -165,7 +165,7 @@ export default function ProjectDetailsPage({
 
 <h3 className="text-xl font-bold text-metallic border-l-4 border-cyan-400 pl-6 mt-3">3. Sentiment Analysis & NLP</h3>
 <ul className="list-disc list-inside text-cyan-200 pl-12 mt-2">
-  <li>Transformer Models: Used HuggingFace's pre-trained sentiment classifiers to analyze user review text.</li>
+  <li>Transformer Models: Used HuggingFaces pre-trained sentiment classifiers to analyze user review text.</li>
   <li>Score Aggregation: Mapped sentiment outputs to polarity scores and calculated region-based sentiment averages.</li>
   <li>Text Preprocessing: Tokenized and cleaned review text to improve inference speed and reduce noise.</li>
 </ul>
