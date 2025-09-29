@@ -14,8 +14,23 @@ const imageFitConfig = {
   mainImageFit: "contain",
   galleryFits: ["fill", "fill", "fill"],
 };
+// Pre-render all possible project pages
+export async function generateStaticParams() {
+  const projects = [
+    "menacity",
+    "photo",
+    "real_estate",
+    "reddit_analysis",
+    "talkify",
+    "video",
+    "website",
+    "yelp_danalysis",
+  ];
 
-const galleryAspectRatios = ["16-9", "16-9", "16-9"]; 
+  return projects.map((project) => ({
+    project,
+  }));
+}
 
 export default async function ProjectDetailsPage({
   params,

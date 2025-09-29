@@ -28,6 +28,23 @@ const imageFitConfig = {
   mainImageFit: "cover", // "cover" or "contain"
   galleryFits: "contain",  // can be "cover" or "contain" for all gallery items
 };
+// Pre-render all possible project pages
+export async function generateStaticParams() {
+  const projects = [
+    "menacity",
+    "photo",
+    "real_estate",
+    "reddit_analysis",
+    "talkify",
+    "video",
+    "website",
+    "yelp_danalysis",
+  ];
+
+  return projects.map((project) => ({
+    project,
+  }));
+}
 
 export default async function ProjectDetailsPage({
   params,

@@ -11,6 +11,23 @@ const imageFitConfig = {
   mainImageFit: "cover",
 };
 
+// Pre-render all possible project pages
+export async function generateStaticParams() {
+  const projects = [
+    "menacity",
+    "photo",
+    "real_estate",
+    "reddit_analysis",
+    "talkify",
+    "video",
+    "website",
+    "yelp_danalysis",
+  ];
+
+  return projects.map((project) => ({
+    project,
+  }));
+}
 
 export default async function ProjectDetailsPage({
   params,

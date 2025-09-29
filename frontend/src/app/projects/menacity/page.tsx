@@ -25,6 +25,24 @@ const imageFitConfig = {
 
 const galleryAspectRatios = ["9-16","9-16","9-16","9-16","9-16","9-16","9-16","9-16","9-16"]; 
 
+// Pre-render all possible project pages
+export async function generateStaticParams() {
+  const projects = [
+    "menacity",
+    "photo",
+    "real_estate",
+    "reddit_analysis",
+    "talkify",
+    "video",
+    "website",
+    "yelp_danalysis",
+  ];
+
+  return projects.map((project) => ({
+    project,
+  }));
+}
+
 // Make the page async so Next.js types are satisfied
 export default async function ProjectDetailsPage({
   params,
