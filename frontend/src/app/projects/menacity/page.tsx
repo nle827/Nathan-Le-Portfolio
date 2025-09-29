@@ -28,9 +28,7 @@ const galleryAspectRatios = ["9-16","9-16","9-16","9-16","9-16","9-16","9-16","9
 // Make the page async so Next.js types are satisfied
 export default async function ProjectDetailsPage({
   params,
-}: {
-  params: { project: string };
-}) {
+}: any) {
   const projectSlug = params?.project || "Menacity Clothing";
   const projectTitle = decodeURIComponent(projectSlug.replace(/-/g, " "));
   const playClickSound = useButtonClickSound();
