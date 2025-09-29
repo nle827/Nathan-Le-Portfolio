@@ -52,11 +52,9 @@ const imageFitConfig = {
   galleryFits: "contain",  // can be "cover" or "contain" for all gallery items
 };
 
-export default function ProjectDetailsPage({
+export default async function ProjectDetailsPage({
   params,
-}: {
-  params: { project: string };
-}) {
+}: any){
   const projectSlug = params?.project || "Photography Showcase";
   const projectTitle = decodeURIComponent(projectSlug.replace(/-/g, " "));
   const playClickSound = useButtonClickSound();

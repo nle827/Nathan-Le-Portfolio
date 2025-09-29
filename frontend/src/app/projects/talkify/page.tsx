@@ -17,11 +17,9 @@ const imageFitConfig = {
 
 const galleryAspectRatios = ["16-9", "16-9", "16-9"]; 
 
-export default function ProjectDetailsPage({
+export default async function ProjectDetailsPage({
   params,
-}: {
-  params: { project: string };
-}) {
+}: any){
   const projectSlug = params?.project || "Talkify";
   const projectTitle = decodeURIComponent(projectSlug.replace(/-/g, " "));
   const playClickSound = useButtonClickSound();

@@ -33,11 +33,9 @@ const imageFitConfig = {
   galleryFits: "contain",
 };
 
-export default function ProjectDetailsPage({
+export default async function ProjectDetailsPage({
   params,
-}: {
-  params: { project: string };
-}) {
+}: any){
   const projectSlug = params?.project || "Videography Showcase";
   const projectTitle = decodeURIComponent(projectSlug.replace(/-/g, " "));
   const playClickSound = useButtonClickSound();

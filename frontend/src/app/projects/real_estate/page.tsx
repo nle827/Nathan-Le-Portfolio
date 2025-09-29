@@ -29,11 +29,9 @@ const imageFitConfig = {
   galleryFits: "contain",  // can be "cover" or "contain" for all gallery items
 };
 
-export default function ProjectDetailsPage({
+export default async function ProjectDetailsPage({
   params,
-}: {
-  params: { project: string };
-}) {
+}: any){
   const projectSlug = params?.project || "Danny Le Realty";
   const projectTitle = decodeURIComponent(projectSlug.replace(/-/g, " "));
   const playClickSound = useButtonClickSound();

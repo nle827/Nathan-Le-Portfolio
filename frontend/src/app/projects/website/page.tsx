@@ -12,11 +12,9 @@ const imageFitConfig = {
 };
 
 
-export default function ProjectDetailsPage({
+export default async function ProjectDetailsPage({
   params,
-}: {
-  params: { project: string };
-}) {
+}: any){
   const projectSlug = params?.project || "Portfolio Website";
   const projectTitle = decodeURIComponent(projectSlug.replace(/-/g, " "));
   const playClickSound = useButtonClickSound();

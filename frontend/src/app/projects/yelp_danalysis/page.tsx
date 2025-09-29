@@ -20,11 +20,9 @@ const imageFitConfig = {
 
 const galleryAspectRatios = ["16-9", "16-9", "16-9", "16-9", "16-9", "9-16"]; 
 
-export default function ProjectDetailsPage({
+export default async function ProjectDetailsPage({
   params,
-}: {
-  params: { project: string };
-}) {
+}: any){
   const projectSlug = params?.project || "Yelp Data Analysis";
   const projectTitle = decodeURIComponent(projectSlug.replace(/-/g, " "));
   const playClickSound = useButtonClickSound();

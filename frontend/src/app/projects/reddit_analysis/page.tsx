@@ -14,11 +14,9 @@ const imageFitConfig = {
   galleryFits: ["fill", "fill", "fill"],
 };
 
-export default function ProjectDetailsPage({
+export default async function ProjectDetailsPage({
   params,
-}: {
-  params: { project: string };
-}) {
+}: any){
   const projectSlug = params?.project || "Reddit Data Analysis (FIX IMAGES AND GITHUB LINK)";
   const projectTitle = decodeURIComponent(projectSlug.replace(/-/g, " "));
   const playClickSound = useButtonClickSound();
