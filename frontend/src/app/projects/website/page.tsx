@@ -2,7 +2,7 @@
 import { motion } from "framer-motion"; 
 import Link from "next/link";
 import ClickButton from "../../components/ClickButton";
-import ContactFormWrapper from "../../components/ContactFormWrapper";
+import ContactForm from "../../components/ContactFormWrapper";
 
 
 
@@ -178,7 +178,7 @@ export default async function ProjectDetailsPage({
   <li>Optimized build process using Next.js static exports for faster hosting response times.</li>
 </ul>
 </motion.section>
-<ContactFormWrapper topMargin="mt-8" transparent />
+<ContactForm topMargin="mt-8" transparent />
       </div>
     </motion.div>
   );

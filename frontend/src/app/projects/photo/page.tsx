@@ -225,7 +225,7 @@ export default async function ProjectDetailsPage({
 })}
   </div>
 </section>
-<ContactFormWrapper topMargin="mt-8" transparent />
+<ContactFormWrapper topMargin="mt-8" transparent /> 
       </div>
     </motion.div>
   );
