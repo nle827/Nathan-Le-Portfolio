@@ -1,8 +1,12 @@
-"use client";
+
 import { motion } from "framer-motion"; 
 import Link from "next/link";
-import ContactForm from "../../components/ContactForm";
 import ClickButton from "../../components/ClickButton";
+import dynamic from "next/dynamic";
+const ContactForm = dynamic(() => import("../../components/ContactForm"), {
+  ssr: false,
+});
+
 
 // Public images
 const projectMainImage = "/images/menacity_logo.webp";

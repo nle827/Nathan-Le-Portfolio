@@ -1,8 +1,11 @@
-"use client";
 import { motion } from "framer-motion"; 
 import Link from "next/link";
 import ClickButton from "../../components/ClickButton";
-import ContactForm from "../../components/ContactForm";
+import dynamic from "next/dynamic";
+const ContactForm = dynamic(() => import("../../components/ContactForm"), {
+  ssr: false,
+});
+
 const projectMainImage = "/images/reddit_analysis_logo.webp";
 const reddit1 = "/images/reddit_analysis_home.webp";
 const reddit2 = "/images/reddit_analysis_example1.webp";

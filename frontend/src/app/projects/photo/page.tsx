@@ -1,8 +1,11 @@
-"use client";
+
 import { motion } from "framer-motion"; 
 import Link from "next/link";
 import ClickButton from "../../components/ClickButton";
-import ContactForm from "../../components/ContactForm";
+import dynamic from "next/dynamic";
+const ContactForm = dynamic(() => import("../../components/ContactForm"), {
+  ssr: false,
+});
 const projectMainImage = "/images/harrypotter_castle.webp";
 const photo1 = "/images/photo1.webp";
 const photo2= "/images/photo2.webp";

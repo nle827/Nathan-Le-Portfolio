@@ -1,8 +1,11 @@
-"use client";
 import { motion } from "framer-motion"; 
 import Link from "next/link";
 import ClickButton from "../../components/ClickButton";
-import ContactForm from "../../components/ContactForm";
+import dynamic from "next/dynamic";
+const ContactForm = dynamic(() => import("../../components/ContactForm"), {
+  ssr: false,
+});
+
 
 const projectMainImage = "/images/talkify.webp";
 const talkify1 = "/images/talkify_login.webp";

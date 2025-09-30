@@ -1,7 +1,10 @@
-"use client";
 import { motion } from "framer-motion"; 
 import Link from "next/link";
-import ContactForm from "../../components/ContactForm";
+import dynamic from "next/dynamic";
+const ContactForm = dynamic(() => import("../../components/ContactForm"), {
+  ssr: false,
+});
+
 import ClickButton from "../../components/ClickButton";
 // Public images should be referenced directly via URL path, not imported
 const projectMainImage = "/images/dlr_logo.webp";

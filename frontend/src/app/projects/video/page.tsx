@@ -1,8 +1,12 @@
-"use client";
+
 import { motion } from "framer-motion"; 
 import Link from "next/link";
 import ClickButton from "../../components/ClickButton";
-import ContactForm from "../../components/ContactForm";
+import dynamic from "next/dynamic";
+const ContactForm = dynamic(() => import("../../components/ContactForm"), {
+  ssr: false,
+});
+
 
 const projectMainImage = "/images/waterfall.webp";
 const video1 = "/videos/video4.webm";
