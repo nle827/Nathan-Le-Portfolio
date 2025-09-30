@@ -11,7 +11,7 @@ interface ContactSectionProps {
   className?: string;
 }
 
-const ContactSection: React.FC<ContactSectionProps> = ({
+const ContactForm: React.FC<ContactSectionProps> = ({
   transparent = false,
   topMargin = "mt-0",
   className = "",
@@ -138,4 +138,4 @@ const ContactSection: React.FC<ContactSectionProps> = ({
   );
 };
 
-export default ContactSection;
+export default ContactForm;

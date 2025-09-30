@@ -3,8 +3,6 @@ import Link from "next/link";
 import ContactForm from "../../components/ContactForm";
 import ClickButton from "../../components/ClickButton";
 
-
-
 // Public images
 const projectMainImage = "/images/menacity_logo.webp";
 const menacity1 = "/images/menacity1n.webp";
