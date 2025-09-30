@@ -1,7 +1,6 @@
 import { motion } from "framer-motion"; 
 import Link from "next/link";
-import { useButtonClickSound } from "../../utils/buttonClickSound";
-import { useButtonHoverSound } from "../../utils/buttonHoverSound";
+import ClickButton from "../../components/ClickButton";
 import ContactForm from "../../components/ContactForm";
 
 const projectMainImage = "/images/yelp_analysis_logo.webp";
@@ -40,8 +39,6 @@ export default async function ProjectDetailsPage({
 }: any){
   const projectSlug = params?.project || "Yelp Data Analysis";
   const projectTitle = decodeURIComponent(projectSlug.replace(/-/g, " "));
-  const playClickSound = useButtonClickSound();
-  const playHoverSound = useButtonHoverSound();
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -49,16 +46,11 @@ export default async function ProjectDetailsPage({
       className="min-h-screen bg-gradient-to-br from-black via-[#001f2f] to-black text-cyan-400 p-6"
     >
       <div className="max-w-5xl mx-auto space-y-8">
-        <Link
-          href="/portfolio">
-          <button
-            onClick={playClickSound}
-            onMouseEnter={playHoverSound}
-            className="font-mono inline-block mb-4 px-4 py-2 border border-cyan-400 text-cyan-200 hover:bg-cyan-700 hover:text-white transition rounded"
-          >
-          ← Back to Projects
-          </button>
-        </Link>
+<Link href="/portfolio">
+  <ClickButton className="font-mono inline-block mb-4 px-4 py-2 border border-cyan-400 text-cyan-200 hover:bg-cyan-700 hover:text-white transition rounded">
+    ← Back to Projects
+  </ClickButton>
+</Link>
 
         {/* Title + View Website button */}
         <div className="flex justify-between items-center border-b border-cyan-700 pb-2">
@@ -69,19 +61,17 @@ export default async function ProjectDetailsPage({
             className="text-cyberpunk-wave text-4xl font-neuestance-bold font-extrabold text-cyan-300"
           >
             {projectTitle}
-          </motion.h1><a
-            href="https://github.com/Derrick-Mao/yelp-data-analysis"
-            target="_blank"
-            rel="noopener noreferrer">
-            <button
-              onClick={playClickSound}
-              onMouseEnter={playHoverSound}
-              className="font-mono inline-block px-4 py-2 border border-cyan-400 text-cyan-200 hover:bg-cyan-700 hover:text-white transition rounded"
-              >
-              View GitHub
-            </button>
-          </a>
-        </div>
+          </motion.h1>
+          <a
+  href="https://github.com/Derrick-Mao/yelp-data-analysis"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <ClickButton className="font-mono inline-block px-4 py-2 border border-cyan-400 text-cyan-200 hover:bg-cyan-700 hover:text-white transition rounded">
+    View Website
+  </ClickButton>
+</a>
+</div>
 
         {/* Main Image */}
         <div className="w-full h-64 bg-black border border-cyan-700 rounded-lg shadow-inner flex items-center justify-center overflow-hidden">
