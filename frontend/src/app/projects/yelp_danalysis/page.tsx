@@ -2,10 +2,7 @@
 import { motion } from "framer-motion"; 
 import Link from "next/link";
 import ClickButton from "../../components/ClickButton";
-import dynamic from "next/dynamic";
-const ContactForm = dynamic(() => import("../../components/ContactForm"), {
-  ssr: false,
-});
+import ContactForm from "../../components/ContactFormWrapper";
 
 const projectMainImage = "/images/yelp_analysis_logo.webp";
 const yelp1 = "/images/yelp_danalysis_home.webp";

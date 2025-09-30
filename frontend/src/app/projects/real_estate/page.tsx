@@ -1,9 +1,8 @@
 import { motion } from "framer-motion"; 
 import Link from "next/link";
 import dynamic from "next/dynamic";
-const ContactForm = dynamic(() => import("../../components/ContactForm"), {
-  ssr: false,
-});
+import ContactForm from "../../components/ContactFormWrapper";
+
 
 import ClickButton from "../../components/ClickButton";
 // Public images should be referenced directly via URL path, not imported
