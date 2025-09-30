@@ -2,7 +2,7 @@
 import { motion } from "framer-motion"; 
 import Link from "next/link";
 import ClickButton from "../../components/ClickButton";
-import ContactForm from "../../components/ContactFormWrapper";
+import ContactFormWrapper from "../../components/ContactFormWrapper";
 
 const projectMainImage = "/images/harrypotter_castle.webp";
 const photo1 = "/images/photo1.webp";
@@ -225,7 +225,7 @@ export default async function ProjectDetailsPage({
 })}
   </div>
 </section>
-<ContactForm topMargin="mt-8" transparent />
+<ContactFormWrapper topMargin="mt-8" transparent />
       </div>
     </motion.div>
   );

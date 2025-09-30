@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"; 
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import ContactForm from "../../components/ContactFormWrapper";
+import ContactFormWrapper from "../../components/ContactFormWrapper";
 
 
 import ClickButton from "../../components/ClickButton";
@@ -241,7 +241,7 @@ export default async function ProjectDetailsPage({
 })}
   </div>
 </section>
-<ContactForm topMargin="mt-8" transparent />
+<ContactFormWrapper topMargin="mt-8" transparent />
       </div>
     </motion.div>
   );
