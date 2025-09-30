@@ -7,6 +7,7 @@ type Props = {
   transparent?: boolean;
 };
 
+// Client-only dynamic import of ContactForm
 const ContactForm = dynamic(() => import("./ContactForm"), { ssr: false });
 
 export default function ContactFormWrapper({ topMargin, transparent }: Props) {

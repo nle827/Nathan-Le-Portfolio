@@ -1,6 +1,5 @@
 import { motion } from "framer-motion"; 
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import ContactFormWrapper from "../../components/ContactFormWrapper";
 
 
