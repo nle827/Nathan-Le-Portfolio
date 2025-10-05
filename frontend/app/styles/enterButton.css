@@ -13,26 +13,36 @@
   min-width: 200px;
   max-width: 50vw;
   height: 5rem;
-  z-index: 1;
-  overflow: visible; /* allow border to show outside */
+  z-index: 10;
+  overflow: visible; /* allow outline to show outside */
   border-radius: 0.5rem;
 }
 
-/* Hollow rainbow outline */
+/* Hollow rainbow outline with animation */
 .parallelogram::before {
   content: "";
   position: absolute;
-  top: -6px;
+  top: -6px;   /* controls thickness */
   left: -6px;
   width: calc(100% + 12px);
   height: calc(100% + 12px);
-  border: 4px solid;
-  border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, blue, green, yellow, orange, red) 1;
+  background: linear-gradient(
+    90deg,
+    red, orange, yellow, green, blue, indigo, violet, blue, green, yellow, orange, red
+  );
+  background-size: 400% 100%;
+  animation: parallelogramRgbWave 4s linear infinite;
   transform: skewX(20deg);
-  z-index: -1;
   border-radius: 0.5rem;
-}
+  z-index: -1;
 
+  /* Hollow effect: mask inside of pseudo-element */
+  padding: 6px;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+}
 
 .parallelogram::after {
   content: "";
