@@ -115,10 +115,10 @@ const ContactForm: React.FC<ContactSectionProps> = ({
 
           <div className="flex justify-center mb-4 sm:mb-6">
             <ReCAPTCHA
-              sitekey="6LcyHdgrAAAAAHCr9O9IwvgZCo0NptUeuvSHMt1h"
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
               onChange={(token) => setCaptchaToken(token)}
             />
-          </div>
+            </div>
 
           <motion.button
             whileHover={{ scale: 1.05, boxShadow: "0 0 18px #00f0ffcc" }}
