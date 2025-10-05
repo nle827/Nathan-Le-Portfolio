@@ -1,14 +1,9 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-
-declare global {
-  interface Window {
-    grecaptcha: any;
-  }
-}
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface ContactSectionProps {
   transparent?: boolean;
@@ -23,30 +18,22 @@ const ContactForm: React.FC<ContactSectionProps> = ({
 }) => {
   const formRef = useRef<HTMLFormElement>(null);
   const [isSending, setIsSending] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
-  // Load the reCAPTCHA v3 script once
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!captchaToken) {
+      alert("Please complete the reCAPTCHA");
+      return;
+    }
+
     if (!formRef.current) return;
 
     setIsSending(true);
 
-    try {
-      // Get reCAPTCHA v3 token
-      const token = await window.grecaptcha.execute(
-        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
-        { action: "submit" }
-      );
-
-      // Send email via emailjs
-      await emailjs.send(
+    emailjs
+      .send(
         "service_mzbqe7x",
         "template_e3jefhl",
         {
@@ -56,19 +43,22 @@ const ContactForm: React.FC<ContactSectionProps> = ({
             .value,
           message: (formRef.current.elements.namedItem("message") as HTMLTextAreaElement)
             .value,
-          "g-recaptcha-response": token,
+          "g-recaptcha-response": captchaToken,
         },
         "nJwoD52y7lpFOPV8V"
-      );
-
-      alert("✅ Message sent successfully!");
-      formRef.current.reset();
-    } catch (error) {
-      console.error("❌ FAILED...", error);
-      alert("❌ Failed to send message. Please try again later.");
-    } finally {
-      setIsSending(false);
-    }
+      )
+      .then(
+        () => {
+          alert("✅ Message sent successfully!");
+          formRef.current?.reset();
+          setCaptchaToken(null);
+        },
+        (error) => {
+          console.error("❌ FAILED...", error);
+          alert("❌ Failed to send message. Please try again later.");
+        }
+      )
+      .finally(() => setIsSending(false));
   };
 
   return (
@@ -122,6 +112,14 @@ const ContactForm: React.FC<ContactSectionProps> = ({
               focus:outline-none focus:ring-2 focus:ring-cyan-400 shadow-[0_0_8px_#00f0ff88]
               ${transparent ? "bg-black/10 placeholder:text-cyan-300" : "bg-black/50"}`}
           ></textarea>
+
+          <div className="flex justify-center mb-4 sm:mb-6">
+            <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+              onChange={(token) => setCaptchaToken(token)}
+            />
+  
+          </div>
 
           <motion.button
             whileHover={{ scale: 1.05, boxShadow: "0 0 18px #00f0ffcc" }}
