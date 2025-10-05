@@ -6,9 +6,11 @@ module.exports = {
     "./styles/**/*.{css,scss}",
     "./utils/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-    safelist: [
+  safelist: [
     "parallelogram",
     "text-metallic",
+    "text-cyberpunk-wave",
+    "text-rgb-wave"
   ],
   theme: {
     extend: {},
