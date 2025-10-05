@@ -94,7 +94,7 @@ const galleryItems: GalleryItem[] = [
 ];
 
 const imageFitConfig = {
-  mainImageFit: "cover" as const,
+  mainImageFit: "contain" as const,
   galleryFits: ["contain"] as ("contain" | "cover" | "fill")[],
 };
 

@@ -23,7 +23,7 @@ const galleryItems: GalleryItem[] = [
 
 // Image fit configuration
 const imageFitConfig = {
-  mainImageFit: "contain" as const,
+  mainImageFit: "cover" as const,
   galleryFits: ["contain", "contain", "contain", "contain", "contain", "contain", "contain", "contain", "contain"] as ("contain" | "cover" | "fill")[],
 };
 
@@ -47,29 +47,29 @@ const contributions: Contribution[] = [
   {
     heading: "1. Creative Direction",
     items: [
-      "Conceptualize video ideas tailored to mood, story, or platform.",
-      "Plan shoots with attention to composition, lighting, and motion.",
+      "Conceptualized video ideas tailored to mood, story, or platform.",
+      "Planned shoots with attention to composition, lighting, and motion.",
     ],
   },
   {
     heading: "2. Filming & Editing",
     items: [
-      "Capture cinematic footage using handheld, drone, and stabilized gear.",
-      "Edit videos with transitions, motion graphics, and sound design.",
+      "Captured cinematic footage using handheld, drone, and stabilized gear.",
+      "Edited videos with transitions, motion graphics, and sound design.",
     ],
   },
   {
     heading: "3. Storytelling & Presentation",
     items: [
-      "Craft narrative-driven edits that guide viewers through a story.",
-      "Adapt content for diverse formats — from Instagram reels to full-length showcases.",
+      "Crafted narrative-driven edits that guide viewers through a story.",
+      "Adapted content for diverse formats ranging from Instagram reels to full-length showcases.",
     ],
   },
   {
     heading: "4. Collaboration & Experimentation",
     items: [
-      "Work with clients, models, and brands to bring video projects to life.",
-      "Experiment with slow motion, time-lapse, and creative editing techniques.",
+      "Worked with clients, models, and brands to bring video projects to life.",
+      "Experimented with slow motion, time-lapse, and creative editing techniques.",
     ],
   },
 ];

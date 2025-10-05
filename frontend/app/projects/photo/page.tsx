@@ -32,28 +32,28 @@ const contributions: Contribution[] = [
   {
     heading: "1. Creative Direction",
     items: [
-      "Develop unique concepts for shoots, from urban exploration to stylized portraits.",
-      "Plan and stage compositions that highlight subject matter and environment.",
+      "Developed unique concepts for shoots, from urban exploration to stylized portraits.",
+      "Planned and stage compositions that highlight subject matter and environment.",
     ],
   },
   {
     heading: "2. Photography & Editing",
     items: [
-      "Capture high-resolution images with attention to lighting, framing, and detail.",
-      "Enhance and refine photos using Lightroom presets and custom edits.",
+      "Captured high-resolution images with attention to lighting, framing, and detail.",
+      "Enhanced and refine photos using Lightroom presets and custom edits.",
     ],
   },
   {
     heading: "3. Storytelling & Presentation",
     items: [
-      "Curate collections that emphasize narrative flow, mood, and style consistency.",
-      "Optimize photography for diverse formats, including Instagram content and high-quality website displays.",
+      "Curated collections that emphasize narrative flow, mood, and style consistency.",
+      "Optimized photography for diverse formats, including Instagram content and high-quality website displays.",
     ],
   },
   {
     heading: "4. Collaboration & Experimentation",
     items: [
-      "Work with models and creatives to bring shared visions to life.",
+      "Worked with models and creatives to bring shared visions to life.",
     ],
   },
 ];
@@ -82,7 +82,7 @@ const galleryItems: GalleryItem[] = [
 
 // Image fit configuration
 const imageFitConfig = {
-  mainImageFit: "contain" as const,
+  mainImageFit: "cover" as const,
   galleryFits: ["contain","cover","fill"] as ("contain" | "cover" | "fill")[],
 };
 
