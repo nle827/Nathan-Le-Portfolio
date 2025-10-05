@@ -33,7 +33,7 @@ export default function Page() {
 
         <Link href="/home">
   <button
-    className="parallelogram font-neuestance-bold relative z-20"
+    className="parallelogram font-neuestance-bold relative z-20 overflow-visible"
     onClick={playClickSound}
     onMouseEnter={playHoverSound}
   >

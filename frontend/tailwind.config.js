@@ -7,7 +7,8 @@ module.exports = {
     "./utils/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist: [
-    "parallelogram",
+    "parallelogram",             // the main button class
+    "parallelogram span",        // the text inside button
     "text-metallic",
     "text-cyberpunk-wave",
     "text-rgb-wave"
