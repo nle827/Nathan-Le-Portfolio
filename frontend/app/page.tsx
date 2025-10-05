@@ -32,14 +32,16 @@ export default function Page() {
         </h2>
 
         <Link href="/home">
-          <button
-            className="parallelogram relative z-20 px-8 py-4 text-2xl font-neuestance-bold text-white"
-            onClick={playClickSound}
-            onMouseEnter={playHoverSound}
-          >
-            Enter
-          </button>
-        </Link>
+  <button
+    className="parallelogram font-neuestance-bold relative z-20"
+    onClick={playClickSound}
+    onMouseEnter={playHoverSound}
+  >
+    <span>Enter</span>
+  </button>
+</Link>
+
+
       </div>
     </div>
   );
