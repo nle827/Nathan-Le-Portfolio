@@ -1,4 +1,5 @@
 "use client";
+import "./styles/enterButton.css";
 import Link from "next/link";
 import { useButtonClickSound } from "./utils/buttonClickSound";
 import { useButtonHoverSound } from "./utils/buttonHoverSound";
