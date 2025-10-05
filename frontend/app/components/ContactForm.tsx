@@ -19,19 +19,20 @@ const ContactForm: React.FC<ContactSectionProps> = ({
   const formRef = useRef<HTMLFormElement>(null);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [isSending, setIsSending] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formRef.current || !recaptchaRef.current) return;
+    if (!formRef.current) return;
+
+    if (!captchaToken) {
+      alert("Please complete the reCAPTCHA");
+      return;
+    }
 
     setIsSending(true);
 
     try {
-      // Execute invisible reCAPTCHA
-      const token = await recaptchaRef.current.executeAsync();
-      recaptchaRef.current.reset(); // Reset for future submissions
-
-      // Send email via EmailJS
       await emailjs.send(
         "service_mzbqe7x",
         "template_e3jefhl",
@@ -39,13 +40,15 @@ const ContactForm: React.FC<ContactSectionProps> = ({
           name: (formRef.current.elements.namedItem("name") as HTMLInputElement).value,
           email: (formRef.current.elements.namedItem("email") as HTMLInputElement).value,
           message: (formRef.current.elements.namedItem("message") as HTMLTextAreaElement).value,
-          "g-recaptcha-response": token,
+          "g-recaptcha-response": captchaToken,
         },
         "nJwoD52y7lpFOPV8V"
       );
 
       alert("✅ Message sent successfully!");
       formRef.current.reset();
+      recaptchaRef.current?.reset();
+      setCaptchaToken(null);
     } catch (error) {
       console.error("❌ FAILED...", error);
       alert("❌ Failed to send message. Please try again later.");
@@ -106,12 +109,14 @@ const ContactForm: React.FC<ContactSectionProps> = ({
               ${transparent ? "bg-black/10 placeholder:text-cyan-300" : "bg-black/50"}`}
           ></textarea>
 
-          {/* Invisible reCAPTCHA */}
-          <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-            size="invisible"
-            ref={recaptchaRef}
-          />
+          {/* v2 Checkbox reCAPTCHA */}
+          <div className="flex justify-center mb-4 sm:mb-6">
+            <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+              ref={recaptchaRef}
+              onChange={(token) => setCaptchaToken(token)}
+            />
+          </div>
 
           <motion.button
             whileHover={{ scale: 1.05, boxShadow: "0 0 18px #00f0ffcc" }}
