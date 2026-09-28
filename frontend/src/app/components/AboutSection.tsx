@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { useButtonClickSound2 } from "../utils/buttonClickSound2";
-import { useButtonHoverSound } from "../utils/buttonHoverSound";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 interface ContactInfo {
   label: string;
@@ -30,29 +29,16 @@ interface AboutSectionProps {
 }
 
 const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, education, contactInfo, marginTop }) => {
-  const [activeTab, setActiveTab] = useState<"about" | "skills" | "education">("about");
-  const playClickSound = useButtonClickSound2();
-  const playHoverSound = useButtonHoverSound();
   const shouldReduceMotion = useReducedMotion();
 
   const containerVariant = {
     hidden: { opacity: 1 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
   };
 
   const itemVariant = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
-  const contentContainer = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.05 } },
-  };
-
-  const contentItem = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+    hidden: { opacity: 0, y: 16 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   const revealProps = shouldReduceMotion
@@ -60,148 +46,93 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
     : { initial: "hidden", animate: "visible" };
 
   return (
-    <div className={`${marginTop ?? ""} flex flex-col md:flex-row items-start gap-12 w-full px-4 md:px-8 lg:px-16`}>
+    <div id="about" className={`${marginTop ?? ""} w-full max-w-5xl mx-auto px-4 md:px-8 scroll-mt-20`}>
+      <motion.div {...revealProps} variants={containerVariant} className="flex flex-col md:flex-row items-start gap-12">
+        {/* Left: Headshot + Info */}
+        <motion.div variants={itemVariant} className="flex flex-col items-center gap-4 w-full md:w-1/3 shrink-0">
+          <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-slate-100 shadow-md">
+            <Image src="/images/headshot.webp" alt="Nathan Le Headshot" fill sizes="14rem" className="object-cover" />
+          </div>
 
-      {/* Left Side: Headshot + Info */}
-      <motion.div
-        {...revealProps}
-        variants={containerVariant}
-        className="flex flex-col items-center gap-4 w-full md:w-1/3"
-      >
-        <motion.div variants={itemVariant} className="relative w-60 h-60 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-slate-100 shadow-md">
-          <Image src="/images/headshot.webp" alt="Nathan Le Headshot" fill sizes="(max-width: 640px) 15rem, 18rem" className="object-cover" />
-        </motion.div>
+          <h3 className="text-2xl font-bold text-slate-900 text-center">Nathan Le</h3>
+          <p className="text-slate-500 text-center">Software Developer</p>
 
-        <motion.h1 variants={itemVariant} className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 text-center">
-          Nathan Le
-        </motion.h1>
+          <a
+            href="/files/Nathan Le Resume 2025.pdf"
+            download
+            className="mt-2 px-6 py-2.5 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-700 transition-colors"
+          >
+            Download Resume
+          </a>
 
-        <motion.h2 variants={itemVariant} className="text-md sm:text-lg md:text-xl text-cyan-700 font-medium tracking-wide text-center">
-          Software Developer
-        </motion.h2>
-
-        <motion.a
-          href="/files/Nathan Le Resume 2025.pdf"
-          download
-          variants={itemVariant}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onMouseEnter={playHoverSound}
-          onClick={playClickSound}
-          className="mt-4 px-6 py-3 rounded-full border-2 border-cyan-600 bg-white text-cyan-700 text-sm sm:text-base md:text-base font-medium hover:bg-cyan-600 hover:text-white transition-all shadow-sm hover:shadow-[0_0_18px_rgba(8,145,178,0.35)]"
-        >
-          Download Resume
-        </motion.a>
-
-        <motion.div variants={itemVariant} className="flex gap-4 justify-center mt-4">
-          <motion.img
-            src="/images/github.webp"
-            alt="GitHub"
-            className="w-10 h-10 sm:w-12 sm:h-12 object-contain cursor-pointer"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.95 }}
-            onMouseEnter={playHoverSound}
-            onClick={() => window.open("https://github.com/nle827", "_blank")}
-          />
-          <motion.img
-            src="/images/linkedin.webp"
-            alt="LinkedIn"
-            className="w-10 h-10 sm:w-12 sm:h-12 object-contain cursor-pointer"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.95 }}
-            onMouseEnter={playHoverSound}
-            onClick={() => window.open("https://www.linkedin.com/in/nathan-le-b56509322/", "_blank")}
-          />
-        </motion.div>
-      </motion.div>
-
-      {/* Right Side: Tabs & Content */}
-      <div className="flex-1 flex flex-col gap-6 w-full md:w-2/3">
-        {/* Tabs */}
-        <div className="flex flex-wrap gap-3 md:gap-4">
-          {(["about", "skills", "education"] as const).map((tab) => (
-            <motion.button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              onClickCapture={playClickSound}
-              onMouseEnter={playHoverSound}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`px-5 sm:px-6 py-2 rounded-full text-sm sm:text-base font-medium border-2 transition-all duration-200 ${
-                activeTab === tab
-                  ? "bg-cyan-600 text-white border-cyan-600 shadow-sm"
-                  : "bg-white text-cyan-700 border-cyan-200 hover:border-cyan-400 hover:bg-cyan-50"
-              }`}
+          <div className="flex gap-4 mt-2">
+            <a
+              href="https://github.com/nle827"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="text-slate-500 hover:text-slate-900 transition-colors"
             >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
-            </motion.button>
-          ))}
-        </div>
+              <FaGithub size={22} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/nathan-le-b56509322/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-slate-500 hover:text-slate-900 transition-colors"
+            >
+              <FaLinkedin size={22} />
+            </a>
+          </div>
+        </motion.div>
 
-        {/* Content */}
-        <motion.div
-          key={activeTab}
-          variants={containerVariant}
-          initial="hidden"
-          animate="visible"
-          className="bg-white border border-slate-200 rounded-md p-4 sm:p-6 shadow-sm"
-        >
-          {activeTab === "about" && (
-            <motion.div variants={contentContainer} className="space-y-4 sm:space-y-6">
-              <motion.p className="text-left text-slate-700 text-sm sm:text-base md:text-lg leading-relaxed">
-                {aboutText.split(". ").map((sentence, idx) => (
-                  <motion.span key={idx} variants={contentItem} className="block mb-2">
-                    {sentence.trim().endsWith(".") ? sentence : `${sentence}.`}
-                  </motion.span>
-                ))}
-              </motion.p>
+        {/* Right: About, Skills, Education */}
+        <div className="flex-1 flex flex-col gap-10 w-full md:w-2/3">
+          <motion.div variants={itemVariant}>
+            <h2 className="text-xl font-semibold text-slate-900 mb-3">About</h2>
+            <p className="text-slate-600 leading-relaxed">{aboutText}</p>
 
-              <motion.div
-                variants={contentContainer}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 mt-6"
-              >
-                {contactInfo.map((info, idx) => (
-                  <motion.div
-                    key={idx}
-                    variants={contentItem}
-                    className="flex flex-col items-center sm:items-start text-slate-700"
-                  >
-                    <span className="font-bold text-cyan-700 text-sm sm:text-base mb-1">{info.label}</span>
-                    <span className="text-base sm:text-lg">{info.value}</span>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
-          )}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mt-6">
+              {contactInfo.map((info, idx) => (
+                <div key={idx} className="flex flex-col">
+                  <span className="text-xs font-medium uppercase tracking-wide text-slate-400">{info.label}</span>
+                  <span className="text-slate-800">{info.value}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
-          {activeTab === "skills" && (
-            <motion.div variants={contentContainer} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left">
+          <motion.div variants={itemVariant}>
+            <h2 className="text-xl font-semibold text-slate-900 mb-3">Skills</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {Object.entries(skills).map(([category, items]) => (
-                <motion.div key={category} variants={contentItem}>
-                  <h3 className="text-cyan-700 font-bold mb-3">{category}</h3>
-                  <ul className="list-disc list-inside text-slate-700 space-y-1 sm:space-y-2">
+                <div key={category}>
+                  <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-2">{category}</h3>
+                  <ul className="text-slate-700 space-y-1">
                     {items.map((item, idx) => (
                       <li key={idx}>{item}</li>
                     ))}
                   </ul>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
-          )}
+            </div>
+          </motion.div>
 
-          {activeTab === "education" && (
-            <motion.div variants={contentContainer} className="flex flex-col gap-4 text-left">
+          <motion.div variants={itemVariant}>
+            <h2 className="text-xl font-semibold text-slate-900 mb-3">Education</h2>
+            <div className="flex flex-col gap-4">
               {education.map((edu, idx) => (
-                <motion.div key={idx} variants={contentItem} className="border-2 border-slate-200 rounded-md p-3 sm:p-4">
-                  <h4 className="text-cyan-700 font-bold">{edu.school}</h4>
-                  <p className="text-slate-700 italic">{edu.degree}</p>
-                  <p className="text-slate-700 text-sm sm:text-base mt-1">{edu.notes}</p>
-                </motion.div>
+                <div key={idx} className="border border-slate-200 rounded-lg p-4">
+                  <h4 className="font-semibold text-slate-900">{edu.school}</h4>
+                  <p className="text-slate-500 italic text-sm">{edu.degree}</p>
+                  <p className="text-slate-600 text-sm mt-1">{edu.notes}</p>
+                </div>
               ))}
-            </motion.div>
-          )}
-        </motion.div>
-      </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
     </div>
   );
 };

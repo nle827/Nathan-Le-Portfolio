@@ -17,34 +17,37 @@ export default function ProjectsSection({ techProjects, creativeProjects, should
     : { initial: "hidden", animate: "visible" };
 
   return (
-    <motion.div
-      {...revealProps}
-      variants={headerContainerVariants}
-      className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl w-full px-4 sm:px-6 lg:px-0"
-    >
-      {/* Technical */}
-      <motion.div variants={itemVariant} className="w-full">
-        <h2 className="text-2xl sm:text-3xl font-neuestance-bold mb-6 sm:mb-12 text-cyan-700 text-center md:text-left">
-          Technical Projects
-        </h2>
-        <div className="space-y-6">
-          {techProjects.map((proj) => (
-            <ProjectCard key={proj.title} {...proj} />
-          ))}
-        </div>
-      </motion.div>
+    <div id="projects" className="w-full max-w-5xl mx-auto px-4 scroll-mt-20">
+      <h2 className="text-2xl font-semibold text-slate-900 mb-10 text-center md:text-left">Projects</h2>
+      <motion.div
+        {...revealProps}
+        variants={headerContainerVariants}
+        className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full"
+      >
+        {/* Technical */}
+        <motion.div variants={itemVariant} className="w-full">
+          <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wide mb-6 text-center md:text-left">
+            Technical Projects
+          </h3>
+          <div className="space-y-6">
+            {techProjects.map((proj) => (
+              <ProjectCard key={proj.title} {...proj} />
+            ))}
+          </div>
+        </motion.div>
 
-      {/* Creative */}
-      <motion.div variants={itemVariant} className="w-full">
-        <h2 className="text-2xl sm:text-3xl font-neuestance-bold mb-6 sm:mb-12 text-cyan-700 text-center md:text-left">
-          Creative & Visual Projects
-        </h2>
-        <div className="space-y-6">
-          {creativeProjects.map((proj) => (
-            <ProjectCard key={proj.title} {...proj} />
-          ))}
-        </div>
+        {/* Creative */}
+        <motion.div variants={itemVariant} className="w-full">
+          <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wide mb-6 text-center md:text-left">
+            Creative & Visual Projects
+          </h3>
+          <div className="space-y-6">
+            {creativeProjects.map((proj) => (
+              <ProjectCard key={proj.title} {...proj} />
+            ))}
+          </div>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 }

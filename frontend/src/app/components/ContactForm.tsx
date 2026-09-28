@@ -67,12 +67,11 @@ const ContactForm: React.FC<ContactSectionProps> = ({
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
         className="max-w-3xl mx-auto text-center"
       >
-        <h2 className="text-3xl sm:text-4xl font-neuestance-bold md:text-5xl font-bold mb-6 text-slate-900">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-slate-900">
           Get in Touch
         </h2>
         <p className="mb-8 sm:mb-12 text-base sm:text-lg text-slate-600">
@@ -90,7 +89,7 @@ const ContactForm: React.FC<ContactSectionProps> = ({
             placeholder="Your Name"
             required
             className="w-full px-4 py-3 sm:py-4 rounded-md border border-slate-300 bg-white text-slate-900
-              placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
+              placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-slate-900"
           />
           <input
             name="email"
@@ -98,7 +97,7 @@ const ContactForm: React.FC<ContactSectionProps> = ({
             placeholder="Your Email"
             required
             className="w-full px-4 py-3 sm:py-4 rounded-md border border-slate-300 bg-white text-slate-900
-              placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
+              placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-slate-900"
           />
           <textarea
             name="message"
@@ -106,7 +105,7 @@ const ContactForm: React.FC<ContactSectionProps> = ({
             placeholder="Your Message"
             required
             className="w-full px-4 py-3 sm:py-4 rounded-md border border-slate-300 bg-white text-slate-900
-              placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
+              placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-slate-900"
           ></textarea>
 
           <div className="flex justify-center mb-4 sm:mb-6">
@@ -116,18 +115,16 @@ const ContactForm: React.FC<ContactSectionProps> = ({
             />
           </div>
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <button
             type="submit"
             disabled={isSending}
-            className="w-full px-6 py-3 sm:py-4 rounded-full border-2 border-cyan-600 bg-white
-              text-cyan-700 text-lg sm:text-xl font-medium antialiased font-neuestance-bold hover:bg-cyan-600 hover:text-white
-              transition transform shadow-sm hover:shadow-[0_0_18px_rgba(8,145,178,0.35)] focus:outline-none focus:ring-2 focus:ring-cyan-500
+            className="w-full px-6 py-3 sm:py-4 rounded-full bg-slate-900
+              text-white text-base sm:text-lg font-medium hover:bg-slate-700
+              transition-colors focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2
               disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSending ? "Sending..." : "Send Message"}
-          </motion.button>
+          </button>
         </form>
       </motion.div>
     </section>
