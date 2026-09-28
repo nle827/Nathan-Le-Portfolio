@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nathanle.dev"),
+  metadataBase: new URL("https://nathan-le-portfolio.vercel.app"),
   title: {
     default: "Nathan Le — Software Developer",
     template: "%s | Nathan Le",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: "Nathan Le — Software Developer",
     description:
       "Software developer who builds and ships full products — engineering, brand, and visuals.",
-    url: "https://nathanle.dev",
+    url: "https://nathan-le-portfolio.vercel.app",
     siteName: "Nathan Le",
     images: [{ url: "/images/headshot.webp", width: 1200, height: 1200 }],
     type: "website",
