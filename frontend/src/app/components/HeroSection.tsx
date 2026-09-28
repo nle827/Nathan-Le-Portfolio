@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useButtonClickSound } from "../utils/buttonClickSound";
 import { useButtonHoverSound } from "../utils/buttonHoverSound";
@@ -38,12 +39,17 @@ export default function HeroSection({ shouldReduceMotion }: HeroProps) {
       className="flex flex-col items-center text-center w-full max-w-4xl px-4 sm:px-6 lg:px-0"
     >
       {/* Headshot */}
-      <motion.div variants={itemVariant} className="mb-6 mt-5">
-        <img
+      <motion.div
+        variants={itemVariant}
+        className="relative mb-6 mt-5 w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72"
+      >
+        <Image
           src="/images/headshot.webp"
           alt="Headshot of Nathan"
-          className="w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72 rounded-full object-cover border-4 border-white shadow-lg"
-          loading="eager"
+          fill
+          sizes="(max-width: 640px) 12rem, (max-width: 768px) 16rem, 18rem"
+          className="rounded-full object-cover border-4 border-white shadow-lg"
+          priority
         />
       </motion.div>
 

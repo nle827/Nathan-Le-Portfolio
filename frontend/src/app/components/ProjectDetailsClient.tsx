@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import ClickButton from "../components/ClickButton";
 import ContactFormWrapper from "../components/ContactFormWrapper";
@@ -83,15 +84,13 @@ export default function ProjectDetailsClient({
         </div>
 
         {/* Main Image */}
-        <div className="w-full h-64 bg-black border border-cyan-700 rounded-lg shadow-inner flex items-center justify-center overflow-hidden">
-          <img
+        <div className="relative w-full h-64 bg-black border border-cyan-700 rounded-lg shadow-inner overflow-hidden">
+          <Image
             src={mainImage}
             alt={`${title} main image`}
-            className={`${
-              imageFitConfig.mainImageFit === "cover"
-                ? "w-full h-full object-cover"
-                : "max-w-full max-h-full object-contain"
-            }`}
+            fill
+            sizes="(max-width: 1024px) 100vw, 1024px"
+            className={imageFitConfig.mainImageFit === "cover" ? "object-cover" : "object-contain"}
           />
         </div>
 
@@ -179,10 +178,12 @@ export default function ProjectDetailsClient({
         }`}
       >
         {item.type === "image" ? (
-          <img
+          <Image
             src={item.src}
             alt={`Gallery item ${index + 1}`}
-            className={`w-full h-full object-${item.fit} rounded-lg shadow-lg`}
+            fill
+            sizes={`(max-width: 768px) 100vw, ${Math.round(100 / (galleryCols ?? 3))}vw`}
+            className={`object-${item.fit} rounded-lg shadow-lg`}
           />
         ) : (
           <video

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useButtonClickSound2 } from "../utils/buttonClickSound2";
@@ -28,13 +29,13 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, description, link, image, 
       whileHover={{ scale: 1.02 }}
     >
       {image && (
-        <div className="w-full h-48 sm:h-56 md:h-64 bg-black bg-opacity-50 border border-cyan-700 rounded mb-4 flex items-center justify-center overflow-hidden">
-          <img
+        <div className="relative w-full h-48 sm:h-56 md:h-64 bg-black bg-opacity-50 border border-cyan-700 rounded mb-4 overflow-hidden">
+          <Image
             src={image}
             alt={title}
-            loading="lazy"
-            decoding="async"
-            className={`w-full h-full object-${fit} object-center`}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className={`object-${fit} object-center`}
           />
         </div>
       )}

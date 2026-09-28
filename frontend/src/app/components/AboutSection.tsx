@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useButtonClickSound2 } from "../utils/buttonClickSound2";
 import { useButtonHoverSound } from "../utils/buttonHoverSound";
@@ -67,8 +68,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
         variants={containerVariant}
         className="flex flex-col items-center gap-4 w-full md:w-1/3"
       >
-        <motion.div variants={itemVariant} className="w-60 h-60 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-white shadow-[0_0_30px_#00f0ff66]">
-          <img src="/images/headshot.webp" alt="Nathan Le Headshot" className="w-full h-full object-cover" />
+        <motion.div variants={itemVariant} className="relative w-60 h-60 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-white shadow-[0_0_30px_#00f0ff66]">
+          <Image src="/images/headshot.webp" alt="Nathan Le Headshot" fill sizes="(max-width: 640px) 15rem, 18rem" className="object-cover" />
         </motion.div>
 
         <motion.h1 variants={itemVariant} className="text-3xl sm:text-4xl md:text-5xl font-bold text-metallic text-center">
