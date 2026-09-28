@@ -9,11 +9,7 @@ import ProjectDetailsClient, {
 const projectMainImage = "/images/dlr_logo.webp";
 
 // About text
-const aboutText = `During my time as a Marketing Specialist for Danny Le Realty, I developed and executed targeted digital marketing campaigns
-to boost brand visibility and client engagement in a competitive real estate market. My work included designing promotional 
-materials, managing social media presence, and optimizing online content to highlight property listings and client success 
-stories. By combining strategic marketing insights with polished visual design, I contributed to increased lead generation
-and stronger brand recognition.`;
+const aboutText = `Danny Le Realty needed marketing that looked as sharp as the properties it was selling, in a market where most competing agents run nearly identical ad campaigns. I took on brand and digital marketing end-to-end — designing listing graphics and brochures, shooting and editing property video content, and running targeted Facebook and Instagram ad campaigns aimed at active buyers and sellers. I also cleaned up the WordPress listing pages and tightened visual consistency across the site, social channels, and print materials, then used Google Analytics and platform-level insights to see which content and ad creative were actually driving engagement so I could redirect effort toward what worked instead of spreading it evenly across everything.`;
 
 // Tech stack
 const techStack: TechStackCategory[] = [

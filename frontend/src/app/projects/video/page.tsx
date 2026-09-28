@@ -28,7 +28,7 @@ const imageFitConfig = {
 };
 
 // About section
-const aboutText = `Videography allows me to combine storytelling, visuals, and sound into immersive experiences. My work includes short-form social media content, cinematic reels, event highlights, and creative projects. I aim to capture not just motion, but mood and emotion, blending technical precision with creative direction to produce engaging, polished videos.`;
+const aboutText = `Video adds a time dimension to the same instincts I use in photography — pacing, sound, and motion on top of composition and light. This reel is a mix of short-form social content, event highlights, and small creative experiments, shot on an Insta360 Ace Pro 2 and iPhone and cut in Premiere Pro and CapCut. The throughline across all of it is trying to make a clip feel intentional in the first two seconds, since that's realistically all the attention a short-form video gets before someone decides whether to keep watching.`;
 
 // Tech Stack / Tools
 const techStack: TechStackCategory[] = [

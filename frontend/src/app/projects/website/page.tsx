@@ -8,7 +8,7 @@ import ProjectDetailsClient, {
 const projectMainImage = "/images/portfolio_cover.webp";
 
 // About text
-const aboutText = `This cyberpunk-themed personal portfolio website was designed and developed to showcase my technical projects, design work, and creative background. Built with a focus on high visual impact and user-friendly navigation, it blends modern frontend technologies with animated interactions for a memorable browsing experience. The design embraces neon-inspired colors, special text effects, and smooth transitions while maintaining fast load times and a responsive layout. Beyond its visual style, the site is structured for scalability, allowing new projects and content to be added without redesigning the core architecture.`;
+const aboutText = `This site is itself a case study — I recently rebuilt it end to end, and the process says as much about how I work as any other project here. It started as a Next.js/Tailwind/Framer Motion site with a heavy neon cyberpunk theme, but auditing it surfaced real problems: a live database credential committed to git history, roughly 300MB of uncompressed images and video, no SEO metadata because the root layout was a client component, and a mandatory video/sound splash screen gating every visitor. I rewrote the git history to remove the exposed credential and years of accidentally-committed build tooling, re-encoded every image and video (cutting total asset weight to under 40MB with no visible quality loss), restored proper Next.js metadata for real link previews, removed the splash gate, and redesigned the visual language from neon-on-black to the white, minimal palette with cyan accents you're looking at now. Technically it's a small Next.js App Router site — the more interesting part was the audit-and-fix process: telling apart what was actually broken from what just looked unfinished, and fixing each differently.`;
 
 // Tech stack
 const techStack: TechStackCategory[] = [
@@ -36,7 +36,7 @@ const contributions: Contribution[] = [
   {
     heading: "2. UI/UX & Styling",
     items: [
-      "Cyberpunk-inspired color palette with neon cyan and magenta highlights.",
+      "White, minimal palette with cyan reserved for accents, buttons, and a dark header/footer as the signature cyberpunk touch.",
       "Custom typography and iconography for a distinct brand identity.",
       "Framer Motion animations for smooth section transitions and interactive hover states.",
       "Responsive Tailwind CSS utility classes to ensure consistent design across breakpoints.",
@@ -72,10 +72,9 @@ const contributions: Contribution[] = [
   {
     heading: "6. Deployment & Hosting",
     items: [
-      "Deployed to Vercel with automated builds on GitHub commits.",
-      "Custom domain integration with HTTPS by default.",
-      "Preview deployments for testing design changes before production release.",
-      "Optimized build process using Next.js static exports for faster hosting response times.",
+      "Source hosted on GitHub with a clean commit history after removing an accidentally-committed database credential.",
+      "Built to deploy on Vercel with automatic builds from GitHub commits.",
+      "Root layout runs as a server component so Vercel can prerender pages with real metadata instead of shipping an empty shell.",
     ],
   },
 ];

@@ -10,10 +10,7 @@ import ProjectDetailsClient, {
 const projectMainImage = "/images/harrypotter_castle.webp";
 
 // About text
-const aboutText = `Photography has always been a way for me to capture stories, memories, and perspectives 
-that words can’t fully express. My work spans portraits, landscapes, and lifestyle photography, with an emphasis on creating
-visually striking images that balance mood, composition, and color. I enjoy blending technical precision with creative 
-freedom, whether I’m shooting in natural light or crafting a look in post-production.`;
+const aboutText = `Photography is where I work purely on the creative side — no client brief, no deadline, just building an eye for light, composition, and mood. This collection spans portraits, landscapes, and street and lifestyle shots, shot mostly on a Fuji X100T and edited in Lightroom to keep a consistent, moody color tone across a set rather than editing each photo in isolation. It's the same instinct I bring to brand and marketing work — thinking in terms of a cohesive visual identity — just applied without a business objective attached.`;
 
 // Tools / Tech Stack
 const techStack: TechStackCategory[] = [

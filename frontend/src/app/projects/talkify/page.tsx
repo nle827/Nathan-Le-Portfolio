@@ -25,21 +25,7 @@ const imageFitConfig = {
 };
 
 // About section
-const aboutText = `Talkify is a real-time social chatting web application that allows users to connect, make friends, and communicate 
-through both private messages and group chat channels. Inspired by modern messaging platforms like Discord, Talkify 
-combines social media features, secure account management, and real-time communication to create a complete, 
-user-focused experience.
-
-Users can:
-- Create a secure account with authentication and encrypted credentials
-- Add and manage friends with real-time friend request handling
-- Chat via private DMs or dedicated group channels in chat spaces
-- Create and join server-like spaces with invite codes
-- Send, edit, and delete messages that update live via Socket.io
-
-Talkify is a full-stack web application built with TypeScript, React, and Node.js. 
-The app is powered by Socket.io for real-time communication and a MongoDB + Express backend for secure data handling
-and modular architecture.`;
+const aboutText = `Talkify is a full-stack, Discord-style chat app I built to go deeper on real-time systems than a typical CRUD project — private messaging, group "spaces," and live message edits all had to stay in sync across clients without the UI ever feeling laggy or out of order. The backend runs on Node.js/Express with MongoDB, and Socket.io pushes messages, friend requests, and edits to clients in real time instead of polling. Authentication runs on JWT with bcrypt-hashed credentials, and the frontend is a modular React/TypeScript app animated with Framer Motion. The core messaging, friend system, and space/channel model all work end to end; live online-presence indicators are still in progress — the open problem there is keeping accurate real-time state without flooding the socket connection with presence updates on every reconnect.`;
 
 // Tech Stack
 const techStack: TechStackCategory[] = [

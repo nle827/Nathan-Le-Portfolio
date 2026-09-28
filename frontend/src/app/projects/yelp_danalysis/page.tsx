@@ -9,23 +9,7 @@ import ProjectDetailsClient, {
 const projectMainImage = "/images/yelp_analysis_logo.webp";
 
 // About text
-const aboutText = `Yelp Data Analysis is a large-scale data analytics project built to uncover trends 
-and patterns from the Yelp Academic Dataset using distributed computing. The goal was to analyze user behavior,
-business popularity, seasonal trends, and sentiment-based anomalies through both raw data and machine learning insights.
-
-The project pipeline includes collecting raw JSON files, processing them with PySpark, storing results in MongoDB, 
-and presenting findings via a web dashboard. The frontend interface allows users to explore trends by business type, 
-geography, sentiment scores, and more, giving a deep look into consumer patterns across various U.S. regions.
-
-Key Functionalities:
-- Distributed processing of millions of reviews, check-ins, and business records
-- NLP-based sentiment scoring to detect mismatches with user ratings
-- Interactive, filterable web dashboards built with React and Flask
-- Visual breakdown of geographic, seasonal, and demographic insights
-- Modular architecture for easy expansion and isolated analytics
-
-Yelp Data Analysis is a full-stack project combining Python-based data pipelines,
-NoSQL storage, machine learning, and modern frontend development.`;
+const aboutText = `This project set out to answer a concrete question with the Yelp Academic Dataset: do star ratings actually reflect what people say in their reviews? I built a PySpark pipeline to process millions of reviews, check-ins, and business records, ran HuggingFace sentiment models over the review text, and compared the resulting sentiment scores against each business's star rating to surface the biggest mismatches — cases where the text read very differently than the rating suggested. Results are cached in MongoDB and served through a Flask API to a React dashboard where you can filter by city, category, and rating threshold. Most of the engineering effort went into making the Spark side actually fast at that scale: tuning partition sizes and join strategies, avoiding unnecessary shuffles, and reusing cached DataFrames instead of recomputing intermediate results on every query.`;
 
 // Tech stack
 const techStack: TechStackCategory[] = [

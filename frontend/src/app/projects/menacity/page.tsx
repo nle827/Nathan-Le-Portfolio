@@ -9,9 +9,7 @@ import ProjectDetailsClient, {
 const projectMainImage = "/images/menacity_logo.webp";
 
 // About text
-const aboutText = `I founded Menacity Clothing, an independent streetwear brand that blends anime culture with minimalist and modern design. 
-As the sole creative and operational lead, I oversaw every aspect of the brand’s creation, including visual identity, product development, e-commerce, and marketing. 
-This project reflects my ability to merge design, branding, and technology to execute a cohesive business vision.`;
+const aboutText = `Menacity Clothing started as a question: could I take a streetwear brand from a blank page to real revenue entirely on my own — design, storefront, marketing, and fulfillment, all of it? As the sole creative and operational lead, I designed the brand identity, built the Shopify storefront, sourced manufacturing overseas, and ran the marketing across social and email. In its first five months it generated $62,000 in sales, and over its first two years grew a community of 60,000+ followers and drew 150,000+ site sessions. Menacity is the clearest proof I have that I can take an idea from concept to a real, revenue-generating product, not just the software behind one.`;
 
 // Contributions
 const contributions: Contribution[] = [

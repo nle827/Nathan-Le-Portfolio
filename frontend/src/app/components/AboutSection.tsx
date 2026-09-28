@@ -151,7 +151,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
               <motion.p className="text-left text-slate-700 text-sm sm:text-base md:text-lg leading-relaxed">
                 {aboutText.split(". ").map((sentence, idx) => (
                   <motion.span key={idx} variants={contentItem} className="block mb-2">
-                    {sentence}.
+                    {sentence.trim().endsWith(".") ? sentence : `${sentence}.`}
                   </motion.span>
                 ))}
               </motion.p>
