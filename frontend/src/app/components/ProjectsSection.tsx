@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ProjectCard, { ProjectProps } from "./ProjectCard";
-import { headerContainerVariants, itemVariant } from "../utils/animations";
+import { headerContainerVariants } from "../utils/animations";
 
 interface ProjectsProps {
   techProjects: ProjectProps[];
@@ -16,37 +16,22 @@ export default function ProjectsSection({ techProjects, creativeProjects, should
     ? { initial: "visible", animate: "visible" }
     : { initial: "hidden", animate: "visible" };
 
+  const allProjects = [...techProjects, ...creativeProjects];
+
   return (
-    <div id="projects" className="w-full max-w-5xl mx-auto px-4 scroll-mt-20">
-      <h2 className="text-2xl font-semibold text-slate-900 mb-10 text-center md:text-left">Projects</h2>
+    <div id="projects" className="w-full max-w-5xl mx-auto px-4 scroll-mt-24">
+      <div className="text-center md:text-left mb-10">
+        <span className="text-xs font-semibold tracking-widest uppercase text-[var(--olive-600)]">Featured Work</span>
+        <h2 className="text-2xl font-semibold text-stone-900 mt-2">Projects</h2>
+      </div>
       <motion.div
         {...revealProps}
         variants={headerContainerVariants}
-        className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full"
+        className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full items-stretch"
       >
-        {/* Technical */}
-        <motion.div variants={itemVariant} className="w-full">
-          <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wide mb-6 text-center md:text-left">
-            Technical Projects
-          </h3>
-          <div className="space-y-6">
-            {techProjects.map((proj) => (
-              <ProjectCard key={proj.title} {...proj} />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Creative */}
-        <motion.div variants={itemVariant} className="w-full">
-          <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wide mb-6 text-center md:text-left">
-            Creative & Visual Projects
-          </h3>
-          <div className="space-y-6">
-            {creativeProjects.map((proj) => (
-              <ProjectCard key={proj.title} {...proj} />
-            ))}
-          </div>
-        </motion.div>
+        {allProjects.map((proj) => (
+          <ProjectCard key={proj.title} {...proj} />
+        ))}
       </motion.div>
     </div>
   );

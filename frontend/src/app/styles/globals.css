@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
+  --background: #f7f7f2;
+  --foreground: #2b2e21;
+
+  --olive-50: #f5f6ec;
+  --olive-100: #e7e9d1;
+  --olive-200: #d1d5a8;
+  --olive-300: #b5bc7c;
+  --olive-400: #9aa35a;
+  --olive-500: #7d8a44;
+  --olive-600: #636f36;
+  --olive-700: #4e572c;
+  --olive-800: #404826;
+  --olive-900: #363c22;
 }
 
 body {
@@ -13,4 +24,47 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Glassmorphism surface used across cards, nav, and form panels */
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px rgba(54, 60, 34, 0.08);
+}
+
+/* Soft decorative gradient blobs, fixed behind all content */
+.bg-blobs {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bg-blobs::before,
+.bg-blobs::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.35;
+}
+
+.bg-blobs::before {
+  width: 32rem;
+  height: 32rem;
+  top: -8rem;
+  left: -6rem;
+  background: radial-gradient(circle, var(--olive-300), transparent 70%);
+}
+
+.bg-blobs::after {
+  width: 36rem;
+  height: 36rem;
+  bottom: -10rem;
+  right: -8rem;
+  background: radial-gradient(circle, var(--olive-200), transparent 70%);
 }

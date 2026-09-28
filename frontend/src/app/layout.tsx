@@ -40,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={inter.variable}>
       <body>
+        <div className="bg-blobs" aria-hidden="true" />
         <Header />
         {children}
         <Footer />

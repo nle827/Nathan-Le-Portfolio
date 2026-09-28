@@ -4,6 +4,24 @@ import React from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { IconType } from "react-icons";
+import {
+  SiCplusplus,
+  SiPython,
+  SiJavascript,
+  SiHtml5,
+  SiCss,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiTailwindcss,
+  SiFramer,
+  SiFlask,
+  SiGithub,
+  SiFigma,
+  SiCanvas,
+} from "react-icons/si";
 
 interface ContactInfo {
   label: string;
@@ -28,6 +46,30 @@ interface AboutSectionProps {
   marginTop?: string;
 }
 
+const skillIcons: Record<string, IconType> = {
+  "C++": SiCplusplus,
+  Python: SiPython,
+  JavaScript: SiJavascript,
+  HTML: SiHtml5,
+  CSS: SiCss,
+  React: SiReact,
+  "Next.js": SiNextdotjs,
+  "Node.js": SiNodedotjs,
+  "Express.js": SiExpress,
+  "Tailwind CSS": SiTailwindcss,
+  "Framer Motion": SiFramer,
+  Flask: SiFlask,
+  "Git/GitHub": SiGithub,
+  Figma: SiFigma,
+  Canva: SiCanvas,
+};
+
+const stats = [
+  { value: "3+", label: "Years Coding" },
+  { value: "8+", label: "Projects Shipped" },
+  { value: "1", label: "Brand Founded" },
+];
+
 const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, education, contactInfo, marginTop }) => {
   const shouldReduceMotion = useReducedMotion();
 
@@ -46,92 +88,117 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
     : { initial: "hidden", animate: "visible" };
 
   return (
-    <div id="about" className={`${marginTop ?? ""} w-full max-w-5xl mx-auto px-4 md:px-8 scroll-mt-20`}>
-      <motion.div {...revealProps} variants={containerVariant} className="flex flex-col md:flex-row items-start gap-12">
-        {/* Left: Headshot + Info */}
-        <motion.div variants={itemVariant} className="flex flex-col items-center gap-4 w-full md:w-1/3 shrink-0">
-          <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-slate-100 shadow-md">
-            <Image src="/images/headshot.webp" alt="Nathan Le Headshot" fill sizes="14rem" className="object-cover" />
-          </div>
+    <div id="about" className={`${marginTop ?? ""} w-full max-w-5xl mx-auto px-4 scroll-mt-24`}>
+      <motion.div {...revealProps} variants={containerVariant} className="flex flex-col gap-10">
+        <motion.span variants={itemVariant} className="text-xs font-semibold tracking-widest uppercase text-[var(--olive-600)] text-center md:text-left">
+          About Me
+        </motion.span>
 
-          <h3 className="text-2xl font-bold text-slate-900 text-center">Nathan Le</h3>
-          <p className="text-slate-500 text-center">Software Developer</p>
+        <motion.div variants={itemVariant} className="glass rounded-3xl p-6 sm:p-8">
+          <div className="flex flex-col md:flex-row items-start gap-10">
+            {/* Left: Headshot + Info */}
+            <div className="flex flex-col items-center gap-4 w-full md:w-1/3 shrink-0">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-white/70 shadow-md">
+                <Image src="/images/headshot.webp" alt="Nathan Le Headshot" fill sizes="12rem" className="object-cover" />
+              </div>
 
-          <a
-            href="/files/Nathan Le Resume 2025.pdf"
-            download
-            className="mt-2 px-6 py-2.5 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-700 transition-colors"
-          >
-            Download Resume
-          </a>
+              <h3 className="text-xl font-bold text-stone-900 text-center">Nathan Le</h3>
+              <p className="text-stone-500 text-center text-sm">Software Developer</p>
 
-          <div className="flex gap-4 mt-2">
-            <a
-              href="https://github.com/nle827"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="text-slate-500 hover:text-slate-900 transition-colors"
-            >
-              <FaGithub size={22} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/nathan-le-b56509322/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="text-slate-500 hover:text-slate-900 transition-colors"
-            >
-              <FaLinkedin size={22} />
-            </a>
+              <a
+                href="/files/Nathan Le Resume 2025.pdf"
+                download
+                className="mt-2 px-6 py-2.5 rounded-full bg-[var(--olive-600)] text-white text-sm font-medium hover:bg-[var(--olive-700)] transition-colors"
+              >
+                Download Resume
+              </a>
+
+              <div className="flex gap-4 mt-2">
+                <a
+                  href="https://github.com/nle827"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="text-stone-500 hover:text-[var(--olive-700)] transition-colors"
+                >
+                  <FaGithub size={20} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/nathan-le-b56509322/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="text-stone-500 hover:text-[var(--olive-700)] transition-colors"
+                >
+                  <FaLinkedin size={20} />
+                </a>
+              </div>
+            </div>
+
+            {/* Right: About + stats */}
+            <div className="flex-1 flex flex-col gap-6 w-full md:w-2/3">
+              <p className="text-stone-600 leading-relaxed">{aboutText}</p>
+
+              <div className="grid grid-cols-3 gap-4">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="glass rounded-2xl py-4 text-center">
+                    <div className="text-2xl font-bold text-[var(--olive-700)]">{stat.value}</div>
+                    <div className="text-[11px] uppercase tracking-wide text-stone-500 mt-1">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+                {contactInfo.map((info, idx) => (
+                  <div key={idx} className="flex flex-col">
+                    <span className="text-xs font-medium uppercase tracking-wide text-stone-400">{info.label}</span>
+                    <span className="text-stone-800">{info.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
 
-        {/* Right: About, Skills, Education */}
-        <div className="flex-1 flex flex-col gap-10 w-full md:w-2/3">
-          <motion.div variants={itemVariant}>
-            <h2 className="text-xl font-semibold text-slate-900 mb-3">About</h2>
-            <p className="text-slate-600 leading-relaxed">{aboutText}</p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mt-6">
-              {contactInfo.map((info, idx) => (
-                <div key={idx} className="flex flex-col">
-                  <span className="text-xs font-medium uppercase tracking-wide text-slate-400">{info.label}</span>
-                  <span className="text-slate-800">{info.value}</span>
+        {/* Skills */}
+        <motion.div variants={itemVariant} className="glass rounded-3xl p-6 sm:p-8">
+          <h2 className="text-lg font-semibold text-stone-900 mb-6">Skills & Technologies</h2>
+          <div className="flex flex-col gap-6">
+            {Object.entries(skills).map(([category, items]) => (
+              <div key={category}>
+                <h3 className="text-xs font-semibold text-stone-400 uppercase tracking-wide mb-3">{category}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {items.map((item) => {
+                    const Icon = skillIcons[item];
+                    return (
+                      <span
+                        key={item}
+                        className="glass inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm text-stone-700"
+                      >
+                        {Icon && <Icon size={14} className="text-[var(--olive-600)]" />}
+                        {item}
+                      </span>
+                    );
+                  })}
                 </div>
-              ))}
-            </div>
-          </motion.div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
-          <motion.div variants={itemVariant}>
-            <h2 className="text-xl font-semibold text-slate-900 mb-3">Skills</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {Object.entries(skills).map(([category, items]) => (
-                <div key={category}>
-                  <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-2">{category}</h3>
-                  <ul className="text-slate-700 space-y-1">
-                    {items.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div variants={itemVariant}>
-            <h2 className="text-xl font-semibold text-slate-900 mb-3">Education</h2>
-            <div className="flex flex-col gap-4">
-              {education.map((edu, idx) => (
-                <div key={idx} className="border border-slate-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-slate-900">{edu.school}</h4>
-                  <p className="text-slate-500 italic text-sm">{edu.degree}</p>
-                  <p className="text-slate-600 text-sm mt-1">{edu.notes}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+        {/* Education */}
+        <motion.div variants={itemVariant} className="glass rounded-3xl p-6 sm:p-8">
+          <h2 className="text-lg font-semibold text-stone-900 mb-4">Education</h2>
+          <div className="flex flex-col gap-4">
+            {education.map((edu, idx) => (
+              <div key={idx}>
+                <h4 className="font-semibold text-stone-900">{edu.school}</h4>
+                <p className="text-stone-500 italic text-sm">{edu.degree}</p>
+                <p className="text-stone-600 text-sm mt-1">{edu.notes}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </motion.div>
     </div>
   );

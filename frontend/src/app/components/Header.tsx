@@ -7,6 +7,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 const navLinks = [
   { label: "About", href: "/#about" },
   { label: "Projects", href: "/#projects" },
+  { label: "Impact", href: "/#impact" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -14,50 +15,67 @@ const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm border-b border-slate-200 z-50">
-      <div className="flex items-center justify-between max-w-5xl mx-auto px-6 py-4">
-        <Link href="/" className="text-lg font-semibold tracking-tight text-slate-900">
+    <header className="fixed top-4 left-0 w-full z-50 px-4">
+      <div className="glass max-w-4xl mx-auto rounded-full flex items-center justify-between px-5 py-2.5">
+        <Link href="/" className="text-base font-semibold tracking-tight text-[var(--olive-800)]">
           Nathan Le
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {navLinks.map(({ label, href }) => (
             <Link
               key={label}
               href={href}
-              className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+              className="text-sm font-medium text-stone-600 hover:text-[var(--olive-700)] transition-colors"
             >
               {label}
             </Link>
           ))}
         </nav>
 
+        <Link
+          href="/#contact"
+          className="hidden md:inline-flex items-center justify-center px-5 py-2 rounded-full
+                     bg-[var(--olive-600)] text-white text-sm font-medium hover:bg-[var(--olive-700)] transition-colors"
+        >
+          Let&apos;s Talk
+        </Link>
+
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-slate-700"
+          className="md:hidden text-[var(--olive-800)]"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          {menuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+          {menuOpen ? <HiX size={22} /> : <HiMenu size={22} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <nav className="md:hidden border-t border-slate-200 bg-white">
+        <nav className="glass md:hidden max-w-4xl mx-auto mt-2 rounded-2xl">
           <ul className="flex flex-col items-center py-4 gap-4">
             {navLinks.map(({ label, href }) => (
               <li key={label}>
                 <Link
                   href={href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-base font-medium text-slate-700 hover:text-slate-900"
+                  className="text-base font-medium text-stone-700 hover:text-[var(--olive-700)]"
                 >
                   {label}
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/#contact"
+                onClick={() => setMenuOpen(false)}
+                className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-[var(--olive-600)] text-white text-sm font-medium"
+              >
+                Let&apos;s Talk
+              </Link>
+            </li>
           </ul>
         </nav>
       )}

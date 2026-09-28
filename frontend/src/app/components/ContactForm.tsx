@@ -4,12 +4,18 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
+import { HiOutlineMail, HiOutlineLocationMarker, HiOutlineBadgeCheck } from "react-icons/hi";
 
 interface ContactSectionProps {
-  transparent?: boolean;
   topMargin?: string;
   className?: string;
 }
+
+const infoItems = [
+  { icon: HiOutlineMail, label: "nathanale27@gmail.com" },
+  { icon: HiOutlineLocationMarker, label: "Los Angeles, CA" },
+  { icon: HiOutlineBadgeCheck, label: "Available for hire" },
+];
 
 const ContactForm: React.FC<ContactSectionProps> = ({
   topMargin = "mt-0",
@@ -63,52 +69,64 @@ const ContactForm: React.FC<ContactSectionProps> = ({
   return (
     <section
       id="contact"
-      className={`${topMargin} py-16 sm:py-20 px-4 sm:px-8 md:px-16 text-slate-900 ${className}`}
+      className={`${topMargin} py-16 sm:py-20 px-4 text-stone-900 ${className}`}
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-3xl mx-auto text-center"
+        className="glass max-w-5xl mx-auto rounded-[2.5rem] p-6 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10"
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-slate-900">
-          Get in Touch
-        </h2>
-        <p className="mb-8 sm:mb-12 text-base sm:text-lg text-slate-600">
-          Looking to collaborate or have any questions? Feel free to reach out!
-        </p>
+        {/* Left: info */}
+        <div className="flex flex-col justify-center text-center md:text-left">
+          <span className="text-xs font-semibold tracking-widest uppercase text-[var(--olive-600)] mb-3">
+            Let&apos;s Connect
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-stone-900">Get in Touch</h2>
+          <p className="mb-8 text-stone-600">
+            Looking to collaborate or have any questions? Feel free to reach out!
+          </p>
 
-        <form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className="space-y-4 sm:space-y-6 max-w-xl mx-auto"
-        >
+          <div className="flex flex-col gap-3 items-center md:items-start">
+            {infoItems.map(({ icon: Icon, label }) => (
+              <div key={label} className="flex items-center gap-3 text-stone-700">
+                <span className="glass rounded-full p-2">
+                  <Icon size={16} className="text-[var(--olive-600)]" />
+                </span>
+                <span className="text-sm">{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right: form */}
+        <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             name="name"
             type="text"
             placeholder="Your Name"
             required
-            className="w-full px-4 py-3 sm:py-4 rounded-md border border-slate-300 bg-white text-slate-900
-              placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-slate-900"
+            className="w-full px-4 py-3 rounded-xl border border-white/70 bg-white/60 text-stone-900
+              placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[var(--olive-500)]"
           />
           <input
             name="email"
             type="email"
             placeholder="Your Email"
             required
-            className="w-full px-4 py-3 sm:py-4 rounded-md border border-slate-300 bg-white text-slate-900
-              placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-slate-900"
+            className="w-full px-4 py-3 rounded-xl border border-white/70 bg-white/60 text-stone-900
+              placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[var(--olive-500)]"
           />
           <textarea
             name="message"
-            rows={5}
+            rows={4}
             placeholder="Your Message"
             required
-            className="w-full px-4 py-3 sm:py-4 rounded-md border border-slate-300 bg-white text-slate-900
-              placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-slate-900"
+            className="w-full px-4 py-3 rounded-xl border border-white/70 bg-white/60 text-stone-900
+              placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-[var(--olive-500)]"
           ></textarea>
 
-          <div className="flex justify-center mb-4 sm:mb-6">
+          <div className="flex justify-center sm:justify-start">
             <ReCAPTCHA
               sitekey="6LcyHdgrAAAAAHCr9O9IwvgZCo0NptUeuvSHMt1h"
               onChange={(token) => setCaptchaToken(token)}
@@ -118,9 +136,9 @@ const ContactForm: React.FC<ContactSectionProps> = ({
           <button
             type="submit"
             disabled={isSending}
-            className="w-full px-6 py-3 sm:py-4 rounded-full bg-slate-900
-              text-white text-base sm:text-lg font-medium hover:bg-slate-700
-              transition-colors focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2
+            className="w-full px-6 py-3 rounded-full bg-[var(--olive-600)]
+              text-white text-base font-medium hover:bg-[var(--olive-700)]
+              transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--olive-600)] focus:ring-offset-2
               disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSending ? "Sending..." : "Send Message"}
