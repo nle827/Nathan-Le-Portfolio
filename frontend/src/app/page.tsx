@@ -13,7 +13,7 @@ export default function HomePage() {
   const shouldReduceMotion = useReducedMotion() ?? false;
 
   return (
-    <div className="flex flex-col items-center text-center bg-gradient-to-br from-black via-[#001f2f] to-black text-cyan-400 px-4 pt-10 pb-16 min-h-screen">
+    <div className="flex flex-col items-center text-center bg-white text-slate-900 px-4 pt-10 pb-16 min-h-screen">
       <HeroSection shouldReduceMotion={shouldReduceMotion} />
       <ProjectsSection
         techProjects={techProjects}

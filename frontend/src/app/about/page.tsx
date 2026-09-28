@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-[#001f2f] to-black text-cyan-400 p-6 md:p-12">
+    <div className="min-h-screen bg-white text-slate-900 p-6 md:p-12">
       <AboutSection
         aboutText={aboutText}
         skills={skills}

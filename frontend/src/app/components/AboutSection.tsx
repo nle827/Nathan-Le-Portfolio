@@ -26,7 +26,7 @@ interface AboutSectionProps {
   skills: Skills;
   education: Education[];
   contactInfo: ContactInfo[];
-  marginTop?: string; 
+  marginTop?: string;
 }
 
 const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, education, contactInfo, marginTop }) => {
@@ -61,22 +61,22 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
 
   return (
     <div className={`${marginTop ?? ""} flex flex-col md:flex-row items-start gap-12 w-full px-4 md:px-8 lg:px-16`}>
-      
+
       {/* Left Side: Headshot + Info */}
       <motion.div
         {...revealProps}
         variants={containerVariant}
         className="flex flex-col items-center gap-4 w-full md:w-1/3"
       >
-        <motion.div variants={itemVariant} className="relative w-60 h-60 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-white shadow-[0_0_30px_#00f0ff66]">
+        <motion.div variants={itemVariant} className="relative w-60 h-60 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-slate-100 shadow-md">
           <Image src="/images/headshot.webp" alt="Nathan Le Headshot" fill sizes="(max-width: 640px) 15rem, 18rem" className="object-cover" />
         </motion.div>
 
-        <motion.h1 variants={itemVariant} className="text-3xl sm:text-4xl md:text-5xl font-bold text-metallic text-center">
+        <motion.h1 variants={itemVariant} className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 text-center">
           Nathan Le
         </motion.h1>
 
-        <motion.h2 variants={itemVariant} className="text-md sm:text-lg md:text-xl text-cyan-300 tracking-wide text-center">
+        <motion.h2 variants={itemVariant} className="text-md sm:text-lg md:text-xl text-cyan-700 font-medium tracking-wide text-center">
           Software Developer
         </motion.h2>
 
@@ -84,11 +84,11 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
           href="/files/Nathan Le Resume 2025.pdf"
           download
           variants={itemVariant}
-          whileHover={{ scale: 1.05, boxShadow: "0 0 15px #00f0ff" }}
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onMouseEnter={playHoverSound}
           onClick={playClickSound}
-          className="mt-4 px-6 py-3 rounded-full border-2 border-cyan-400 bg-black/30 text-cyan-100 text-sm sm:text-base md:text-base font-medium hover:bg-cyan-400 hover:text-black transition-all shadow-[0_0_12px_#00f0ff88]"
+          className="mt-4 px-6 py-3 rounded-full border-2 border-cyan-600 bg-white text-cyan-700 text-sm sm:text-base md:text-base font-medium hover:bg-cyan-600 hover:text-white transition-all shadow-sm hover:shadow-[0_0_18px_rgba(8,145,178,0.35)]"
         >
           Download Resume
         </motion.a>
@@ -125,12 +125,12 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
               onClick={() => setActiveTab(tab)}
               onClickCapture={playClickSound}
               onMouseEnter={playHoverSound}
-              whileHover={{ scale: 1.05, boxShadow: "0 0 15px #00f0ff" }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`px-5 sm:px-6 py-2 rounded-full text-sm sm:text-base font-medium border-2 transition-all duration-200 ${
                 activeTab === tab
-                  ? "bg-cyan-400 text-black border-cyan-400 shadow-[0_0_10px_#00f0ff66]"
-                  : "bg-black/30 text-cyan-300 border-cyan-400 hover:bg-cyan-400 hover:text-black"
+                  ? "bg-cyan-600 text-white border-cyan-600 shadow-sm"
+                  : "bg-white text-cyan-700 border-cyan-200 hover:border-cyan-400 hover:bg-cyan-50"
               }`}
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -144,11 +144,11 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
           variants={containerVariant}
           initial="hidden"
           animate="visible"
-          className="bg-black/40 rounded-md p-4 sm:p-6 shadow-[0_0_20px_#00f0ff66]"
+          className="bg-white border border-slate-200 rounded-md p-4 sm:p-6 shadow-sm"
         >
           {activeTab === "about" && (
             <motion.div variants={contentContainer} className="space-y-4 sm:space-y-6">
-              <motion.p className="text-left text-cyan-200 text-sm sm:text-base md:text-lg leading-relaxed">
+              <motion.p className="text-left text-slate-700 text-sm sm:text-base md:text-lg leading-relaxed">
                 {aboutText.split(". ").map((sentence, idx) => (
                   <motion.span key={idx} variants={contentItem} className="block mb-2">
                     {sentence}.
@@ -164,9 +164,9 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
                   <motion.div
                     key={idx}
                     variants={contentItem}
-                    className="flex flex-col items-center sm:items-start text-cyan-200"
+                    className="flex flex-col items-center sm:items-start text-slate-700"
                   >
-                    <span className="font-bold text-cyan-300 text-sm sm:text-base mb-1">{info.label}</span>
+                    <span className="font-bold text-cyan-700 text-sm sm:text-base mb-1">{info.label}</span>
                     <span className="text-base sm:text-lg">{info.value}</span>
                   </motion.div>
                 ))}
@@ -178,8 +178,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
             <motion.div variants={contentContainer} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left">
               {Object.entries(skills).map(([category, items]) => (
                 <motion.div key={category} variants={contentItem}>
-                  <h3 className="text-cyan-300 font-bold mb-3">{category}</h3>
-                  <ul className="list-disc list-inside text-cyan-200 space-y-1 sm:space-y-2">
+                  <h3 className="text-cyan-700 font-bold mb-3">{category}</h3>
+                  <ul className="list-disc list-inside text-slate-700 space-y-1 sm:space-y-2">
                     {items.map((item, idx) => (
                       <li key={idx}>{item}</li>
                     ))}
@@ -192,10 +192,10 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
           {activeTab === "education" && (
             <motion.div variants={contentContainer} className="flex flex-col gap-4 text-left">
               {education.map((edu, idx) => (
-                <motion.div key={idx} variants={contentItem} className="border-2 border-cyan-400 rounded-md p-3 sm:p-4">
-                  <h4 className="text-cyan-300 font-bold">{edu.school}</h4>
-                  <p className="text-cyan-200 italic">{edu.degree}</p>
-                  <p className="text-cyan-200 text-sm sm:text-base mt-1">{edu.notes}</p>
+                <motion.div key={idx} variants={contentItem} className="border-2 border-slate-200 rounded-md p-3 sm:p-4">
+                  <h4 className="text-cyan-700 font-bold">{edu.school}</h4>
+                  <p className="text-slate-700 italic">{edu.degree}</p>
+                  <p className="text-slate-700 text-sm sm:text-base mt-1">{edu.notes}</p>
                 </motion.div>
               ))}
             </motion.div>

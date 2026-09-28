@@ -13,9 +13,9 @@ export default function ContactPage() {
   if (!isMounted) return null; // prevent SSR mismatch
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-[#001f2f] to-black">
-      {/* Scanlines for cyberpunk effect */}
-      <div className="absolute inset-0 pointer-events-none z-0 opacity-10 bg-[repeating-linear-gradient(to_bottom,transparent_0px,rgba(0,255,255,0.05)_1px,transparent_2px)]"></div>
+    <div className="relative min-h-screen bg-white">
+      {/* Subtle scanline texture */}
+      <div className="absolute inset-0 pointer-events-none z-0 opacity-30 bg-[repeating-linear-gradient(to_bottom,transparent_0px,rgba(8,145,178,0.03)_1px,transparent_2px)]"></div>
 
       {/* Contact Section */}
       <ContactSection topMargin="pt-32" />

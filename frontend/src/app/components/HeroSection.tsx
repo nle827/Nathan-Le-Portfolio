@@ -48,18 +48,18 @@ export default function HeroSection({ shouldReduceMotion }: HeroProps) {
           alt="Headshot of Nathan"
           fill
           sizes="(max-width: 640px) 12rem, (max-width: 768px) 16rem, 18rem"
-          className="rounded-full object-cover border-4 border-white shadow-lg"
+          className="rounded-full object-cover border-4 border-slate-100 shadow-md"
           priority
         />
       </motion.div>
 
       {/* Name */}
-      <motion.h1 variants={itemVariant} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-metallic mb-2">
+      <motion.h1 variants={itemVariant} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-2">
         Nathan Le
       </motion.h1>
 
       {/* Subtitle */}
-      <motion.h1 variants={itemVariant} className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-metallic mb-6">
+      <motion.h1 variants={itemVariant} className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-cyan-700 font-medium mb-6">
         Software Developer
       </motion.h1>
 
@@ -69,12 +69,12 @@ export default function HeroSection({ shouldReduceMotion }: HeroProps) {
         <motion.a
           onMouseEnter={playHoverSound}
           onClick={() => handleNavigation("/portfolio")}
-          whileHover={{ scale: 1.05, boxShadow: "0 0 15px #00f0ff" }}
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="inline-flex items-center justify-center px-6 sm:px-8 py-2 sm:py-3 rounded-full 
-                     border-2 border-cyan-400 bg-black/30 text-cyan-100 text-base sm:text-lg font-medium 
-                     hover:bg-cyan-800 hover:text-white transition transform 
-                     shadow-[0_0_12px_#00f0ff88] hover:shadow-[0_0_18px_#00f0ffcc]"
+          className="inline-flex items-center justify-center px-6 sm:px-8 py-2 sm:py-3 rounded-full
+                     border-2 border-cyan-600 bg-white text-cyan-700 text-base sm:text-lg font-medium
+                     hover:bg-cyan-600 hover:text-white transition transform shadow-sm
+                     hover:shadow-[0_0_18px_rgba(8,145,178,0.35)]"
         >
           View Work
         </motion.a>
@@ -107,7 +107,7 @@ export default function HeroSection({ shouldReduceMotion }: HeroProps) {
       </motion.div>
 
       {/* Portfolio Title */}
-      <motion.h2 variants={itemVariant} className="font-neuestance-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-16 sm:mt-24 mb-16 sm:mb-24">
+      <motion.h2 variants={itemVariant} className="font-neuestance-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-slate-900 mt-16 sm:mt-24 mb-16 sm:mb-24">
         My Portfolio
       </motion.h2>
     </motion.div>

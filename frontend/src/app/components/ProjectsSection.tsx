@@ -24,7 +24,7 @@ export default function ProjectsSection({ techProjects, creativeProjects, should
     >
       {/* Technical */}
       <motion.div variants={itemVariant} className="w-full">
-        <h2 className="text-2xl sm:text-3xl font-neuestance-bold mb-6 sm:mb-12 text-cyan-300 text-center md:text-left">
+        <h2 className="text-2xl sm:text-3xl font-neuestance-bold mb-6 sm:mb-12 text-cyan-700 text-center md:text-left">
           Technical Projects
         </h2>
         <div className="space-y-6">
@@ -36,7 +36,7 @@ export default function ProjectsSection({ techProjects, creativeProjects, should
 
       {/* Creative */}
       <motion.div variants={itemVariant} className="w-full">
-        <h2 className="text-2xl sm:text-3xl font-neuestance-bold mb-6 sm:mb-12 text-cyan-300 text-center md:text-left">
+        <h2 className="text-2xl sm:text-3xl font-neuestance-bold mb-6 sm:mb-12 text-cyan-700 text-center md:text-left">
           Creative & Visual Projects
         </h2>
         <div className="space-y-6">

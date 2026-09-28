@@ -18,15 +18,15 @@ export default function ProjectsPage() {
   const creativeProject = creativeProjects[creativeIndex];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-[#001f2f] to-black text-cyan-400 p-6 font-mono">
-      <h1 className="font-neuestance-bold text-5xl leading-tight font-bold text-center mb-15 text-metallic">
+    <div className="min-h-screen bg-white text-slate-900 p-6">
+      <h1 className="font-neuestance-bold text-5xl leading-tight font-bold text-center mb-15 text-slate-900">
         Projects
       </h1>
 
       <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
         {/* Tech Projects */}
         <section>
-          <h2 className="font-neuestance-bold text-2xl font-bold mb-4 text-cyan-300">
+          <h2 className="font-neuestance-bold text-2xl font-bold mb-4 text-cyan-700">
             Technical Projects
           </h2>
           <ProjectCard {...techProject} />
@@ -38,7 +38,7 @@ export default function ProjectsPage() {
               }}
               onMouseEnter={playHoverSound}
               disabled={techIndex === 0}
-              className="px-4 py-2 border rounded border-cyan-400 text-cyan-200 disabled:opacity-30 hover:bg-cyan-800 hover:text-cyan-100 hover:shadow-[0_0_15px_#00f0ffcc] transition-all"
+              className="px-4 py-2 border rounded border-cyan-600 text-cyan-700 disabled:opacity-30 hover:bg-cyan-600 hover:text-white transition-all"
             >
               [ Previous ]
             </button>
@@ -51,7 +51,7 @@ export default function ProjectsPage() {
               }}
               onMouseEnter={playHoverSound}
               disabled={techIndex + 1 >= techProjects.length}
-              className="px-4 py-2 border rounded border-cyan-400 text-cyan-200 disabled:opacity-30 hover:bg-cyan-800 hover:text-cyan-100 hover:shadow-[0_0_15px_#00f0ffcc] transition-all"
+              className="px-4 py-2 border rounded border-cyan-600 text-cyan-700 disabled:opacity-30 hover:bg-cyan-600 hover:text-white transition-all"
             >
               [ Next ]
             </button>
@@ -60,7 +60,7 @@ export default function ProjectsPage() {
 
         {/* Creative Projects */}
         <section>
-          <h2 className="font-neuestance-bold text-2xl font-bold mb-4 text-cyan-300">
+          <h2 className="font-neuestance-bold text-2xl font-bold mb-4 text-cyan-700">
             Creative and Visual Projects
           </h2>
           <ProjectCard {...creativeProject} />
@@ -72,7 +72,7 @@ export default function ProjectsPage() {
               }}
               onMouseEnter={playHoverSound}
               disabled={creativeIndex === 0}
-              className="px-4 py-2 border rounded border-cyan-400 text-cyan-200 disabled:opacity-30 hover:bg-cyan-800 hover:text-cyan-100 hover:shadow-[0_0_15px_#00f0ffcc] transition-all"
+              className="px-4 py-2 border rounded border-cyan-600 text-cyan-700 disabled:opacity-30 hover:bg-cyan-600 hover:text-white transition-all"
             >
               [ Previous ]
             </button>
@@ -85,14 +85,14 @@ export default function ProjectsPage() {
               }}
               onMouseEnter={playHoverSound}
               disabled={creativeIndex + 1 >= creativeProjects.length}
-              className="px-4 py-2 border rounded border-cyan-400 text-cyan-200 disabled:opacity-30 hover:bg-cyan-800 hover:text-cyan-100 hover:shadow-[0_0_15px_#00f0ffcc] transition-all"
+              className="px-4 py-2 border rounded border-cyan-600 text-cyan-700 disabled:opacity-30 hover:bg-cyan-600 hover:text-white transition-all"
             >
               [ Next ]
             </button>
           </div>
         </section>
       </div>
-       <ContactForm topMargin="mt-8" transparent />
+      <ContactForm topMargin="mt-8" />
     </div>
   );
 }

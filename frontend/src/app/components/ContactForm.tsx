@@ -12,7 +12,6 @@ interface ContactSectionProps {
 }
 
 const ContactForm: React.FC<ContactSectionProps> = ({
-  transparent = false,
   topMargin = "mt-0",
   className = "",
 }) => {
@@ -64,7 +63,7 @@ const ContactForm: React.FC<ContactSectionProps> = ({
   return (
     <section
       id="contact"
-      className={`${topMargin} py-16 sm:py-20 px-4 sm:px-8 md:px-16 text-cyan-100 ${className}`}
+      className={`${topMargin} py-16 sm:py-20 px-4 sm:px-8 md:px-16 text-slate-900 ${className}`}
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -73,10 +72,10 @@ const ContactForm: React.FC<ContactSectionProps> = ({
         viewport={{ once: true }}
         className="max-w-3xl mx-auto text-center"
       >
-        <h2 className="text-3xl sm:text-4xl font-neuestance-bold md:text-5xl font-bold mb-6 text-cyan-400 drop-shadow-[0_0_10px_#00f0ff]">
+        <h2 className="text-3xl sm:text-4xl font-neuestance-bold md:text-5xl font-bold mb-6 text-slate-900">
           Get in Touch
         </h2>
-        <p className="mb-8 sm:mb-12 text-base sm:text-lg text-cyan-200">
+        <p className="mb-8 sm:mb-12 text-base sm:text-lg text-slate-600">
           Looking to collaborate or have any questions? Feel free to reach out!
         </p>
 
@@ -90,27 +89,24 @@ const ContactForm: React.FC<ContactSectionProps> = ({
             type="text"
             placeholder="Your Name"
             required
-            className={`w-full px-4 py-3 sm:py-4 rounded-md border border-cyan-400 text-cyan-100
-              focus:outline-none focus:ring-2 focus:ring-cyan-400 shadow-[0_0_8px_#00f0ff88]
-              ${transparent ? "bg-black/10 placeholder:text-cyan-300" : "bg-black/50"}`}
+            className="w-full px-4 py-3 sm:py-4 rounded-md border border-slate-300 bg-white text-slate-900
+              placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
           />
           <input
             name="email"
             type="email"
             placeholder="Your Email"
             required
-            className={`w-full px-4 py-3 sm:py-4 rounded-md border border-cyan-400 text-cyan-100
-              focus:outline-none focus:ring-2 focus:ring-cyan-400 shadow-[0_0_8px_#00f0ff88]
-              ${transparent ? "bg-black/10 placeholder:text-cyan-300" : "bg-black/50"}`}
+            className="w-full px-4 py-3 sm:py-4 rounded-md border border-slate-300 bg-white text-slate-900
+              placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
           />
           <textarea
             name="message"
             rows={5}
             placeholder="Your Message"
             required
-            className={`w-full px-4 py-3 sm:py-4 rounded-md border border-cyan-400 text-cyan-100
-              focus:outline-none focus:ring-2 focus:ring-cyan-400 shadow-[0_0_8px_#00f0ff88]
-              ${transparent ? "bg-black/10 placeholder:text-cyan-300" : "bg-black/50"}`}
+            className="w-full px-4 py-3 sm:py-4 rounded-md border border-slate-300 bg-white text-slate-900
+              placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500"
           ></textarea>
 
           <div className="flex justify-center mb-4 sm:mb-6">
@@ -121,13 +117,13 @@ const ContactForm: React.FC<ContactSectionProps> = ({
           </div>
 
           <motion.button
-            whileHover={{ scale: 1.05, boxShadow: "0 0 18px #00f0ffcc" }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             type="submit"
             disabled={isSending}
-            className="w-full px-6 py-3 sm:py-4 rounded-full border-2 border-cyan-400 bg-black/30
-              text-cyan-100 text-lg sm:text-xl font-medium antialiased font-neuestance-bold hover:bg-cyan-800 hover:text-white
-              transition transform shadow-[0_0_12px_#00f0ff88] focus:outline-none focus:ring-2 focus:ring-cyan-400
+            className="w-full px-6 py-3 sm:py-4 rounded-full border-2 border-cyan-600 bg-white
+              text-cyan-700 text-lg sm:text-xl font-medium antialiased font-neuestance-bold hover:bg-cyan-600 hover:text-white
+              transition transform shadow-sm hover:shadow-[0_0_18px_rgba(8,145,178,0.35)] focus:outline-none focus:ring-2 focus:ring-cyan-500
               disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSending ? "Sending..." : "Send Message"}
