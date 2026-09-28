@@ -11,9 +11,9 @@ interface HeroProps {
 }
 
 const socialLinks = [
-  { src: "/images/linkedin.png", alt: "LinkedIn", url: "https://www.linkedin.com/in/nathan-le-b56509322/" },
-  { src: "/images/github.png", alt: "GitHub", url: "https://github.com/nle827" },
-  { src: "/images/email.png", alt: "Email", url: "/contact" },
+  { src: "/images/linkedin.webp", alt: "LinkedIn", url: "https://www.linkedin.com/in/nathan-le-b56509322/" },
+  { src: "/images/github.webp", alt: "GitHub", url: "https://github.com/nle827" },
+  { src: "/images/email.webp", alt: "Email", url: "/contact" },
 ];
 
 export default function HeroSection({ shouldReduceMotion }: HeroProps) {

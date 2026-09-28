@@ -5,7 +5,6 @@ import ProjectDetailsClient, {
   Contribution,
   GalleryItem,
 } from "../../components/ProjectDetailsClient";
-import ContactFormWrapper from "../../components/ContactFormWrapper";
 
 const projectMainImage = "/images/yelp_analysis_logo.webp";
 

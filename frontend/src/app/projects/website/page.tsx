@@ -4,7 +4,6 @@ import ProjectDetailsClient, {
   TechStackCategory,
   Contribution,
 } from "../../components/ProjectDetailsClient";
-import ContactFormWrapper from "../../components/ContactFormWrapper";
 
 const projectMainImage = "/images/portfolio_cover.webp";
 

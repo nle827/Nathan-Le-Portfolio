@@ -94,7 +94,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
 
         <motion.div variants={itemVariant} className="flex gap-4 justify-center mt-4">
           <motion.img
-            src="/images/github.png"
+            src="/images/github.webp"
             alt="GitHub"
             className="w-10 h-10 sm:w-12 sm:h-12 object-contain cursor-pointer"
             whileHover={{ scale: 1.2 }}
@@ -103,7 +103,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
             onClick={() => window.open("https://github.com/nle827", "_blank")}
           />
           <motion.img
-            src="/images/linkedin.png"
+            src="/images/linkedin.webp"
             alt="LinkedIn"
             className="w-10 h-10 sm:w-12 sm:h-12 object-contain cursor-pointer"
             whileHover={{ scale: 1.2 }}
@@ -118,10 +118,10 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
       <div className="flex-1 flex flex-col gap-6 w-full md:w-2/3">
         {/* Tabs */}
         <div className="flex flex-wrap gap-3 md:gap-4">
-          {["about", "skills", "education"].map((tab) => (
+          {(["about", "skills", "education"] as const).map((tab) => (
             <motion.button
               key={tab}
-              onClick={() => setActiveTab(tab as any)}
+              onClick={() => setActiveTab(tab)}
               onClickCapture={playClickSound}
               onMouseEnter={playHoverSound}
               whileHover={{ scale: 1.05, boxShadow: "0 0 15px #00f0ff" }}

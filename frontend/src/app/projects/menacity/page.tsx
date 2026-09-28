@@ -4,7 +4,6 @@ import ProjectDetailsClient, {
   Contribution,
   GalleryItem,
 } from "../../components/ProjectDetailsClient";
-import ContactFormWrapper from "../../components/ContactFormWrapper";
 
 // Main project image
 const projectMainImage = "/images/menacity_logo.webp";

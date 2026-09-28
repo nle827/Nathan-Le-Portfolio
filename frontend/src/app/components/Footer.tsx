@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { useButtonClickSound } from "../utils/buttonClickSound";
@@ -8,7 +10,7 @@ const Footer = () => {
   const playHoverSound = useButtonHoverSound();
 
   const links = [
-    { name: "Home", href: "/home" },
+    { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Projects", href: "/portfolio" },
     { name: "Contact", href: "/contact" },

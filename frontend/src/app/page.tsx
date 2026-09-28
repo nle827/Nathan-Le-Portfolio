@@ -1,27 +1,33 @@
 "use client";
-import Link from "next/link";
-import WelcomePageVideo from "./components/welcomePageVideo";
-import { useButtonClickSound } from "./utils/buttonClickSound";
-import { useButtonHoverSound } from "./utils/buttonHoverSound";
 
-export default function Page() {
-  const playClickSound = useButtonClickSound();
-  const playHoverSound = useButtonHoverSound();
+import React from "react";
+import { useReducedMotion } from "framer-motion";
+import HeroSection from "./components/HeroSection";
+import ProjectsSection from "./components/ProjectsSection";
+import AboutSection from "./components/AboutSection";
+import ContactForm from "./components/ContactForm";
+import { techProjects, creativeProjects } from "./data/projects";
+import { aboutText, skills, education, contactInfo } from "./data/about";
+
+export default function HomePage() {
+  const shouldReduceMotion = useReducedMotion() ?? false;
+
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
-      <WelcomePageVideo />
-      <h1 className="font-neuestance-bold text-5xl sm:text-8xl font-bold text-center text-metallic mb-6">
-        Nathan Le
-      </h1>
-        <h1 className="font-neuestance-bold text-3xl sm:text-3xl font-bold text-center text-metallic">
-        Software Developer
-      </h1>
-
-      <Link href="\home" className="relative group">
-      <button className="font-neuestance-bold mt-12 relative text-2xl text-white bg-transparent parallelogram " onClick={playClickSound} onMouseEnter={playHoverSound}>
-        Enter
-      </button>
-      </Link>
+    <div className="flex flex-col items-center text-center bg-gradient-to-br from-black via-[#001f2f] to-black text-cyan-400 px-4 pt-10 pb-16 min-h-screen">
+      <HeroSection shouldReduceMotion={shouldReduceMotion} />
+      <ProjectsSection
+        techProjects={techProjects}
+        creativeProjects={creativeProjects}
+        shouldReduceMotion={shouldReduceMotion}
+      />
+      <AboutSection
+        aboutText={aboutText}
+        skills={skills}
+        education={education}
+        contactInfo={contactInfo}
+        marginTop="mt-48"
+      />
+      <ContactForm topMargin="mt-16" transparent />
     </div>
   );
 }

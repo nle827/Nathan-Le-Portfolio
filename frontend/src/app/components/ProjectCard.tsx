@@ -7,7 +7,7 @@ import { useButtonClickSound2 } from "../utils/buttonClickSound2";
 import { useButtonHoverSound } from "../utils/buttonHoverSound";
 import { itemVariant } from "../utils/animations";
 
-interface ProjectProps {
+export interface ProjectProps {
   title: string;
   description: string;
   link: string;

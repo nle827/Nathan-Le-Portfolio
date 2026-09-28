@@ -2,12 +2,12 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import ProjectCard from "./ProjectCard";
+import ProjectCard, { ProjectProps } from "./ProjectCard";
 import { headerContainerVariants, itemVariant } from "../utils/animations";
 
 interface ProjectsProps {
-  techProjects: any[];
-  creativeProjects: any[];
+  techProjects: ProjectProps[];
+  creativeProjects: ProjectProps[];
   shouldReduceMotion: boolean;
 }
 

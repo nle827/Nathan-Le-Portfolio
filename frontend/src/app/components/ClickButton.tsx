@@ -16,7 +16,7 @@ export default function ClickButton({ children, className, onClick }: Props) {
 
   return (
     <button
-      onClick={(e) => {
+      onClick={() => {
         playClickSound();
         onClick?.();
       }}

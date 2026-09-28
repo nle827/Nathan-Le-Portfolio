@@ -11,7 +11,7 @@ const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "Home", href: "/home" },
+    { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Projects", href: "/portfolio" },
     { label: "Contact", href: "/contact" },
