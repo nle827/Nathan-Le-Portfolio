@@ -18,7 +18,7 @@ export const techProjects = [
   {
     title: "Nathan's Portfolio Website",
     description:
-      "An immersive cyberpunk-themed portfolio website built with Next.js, Tailwind, and Framer Motion.",
+      "A minimalist portfolio site built with Next.js, Tailwind, and Framer Motion — rebuilt twice, once to fix what was broken and once to redesign it.",
     image: "/images/portfolio_cover.webp",
     link: "/projects/website",
     fit: "cover" as const,
