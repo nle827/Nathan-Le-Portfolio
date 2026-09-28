@@ -1,0 +1,120 @@
+@import "tailwindcss";
+@import "./animation.css";
+@import "./enterButton.css";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ededed;
+  }
+}
+
+@font-face {
+  font-family: "Guardia-Serious";
+  src: url("/fonts/Guardia-Serious.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NeueStance-Bold";
+  src: url("/fonts/NeueStance-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-guardia {
+  font-family: "Guardia-Serious";
+}
+
+.font-neuestance-bold {
+  font-family: "NeueStance-Bold";
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+} 
+
+.video-container {
+  position: fixed; /* Keeps video in place */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1; /* Puts it behind content */
+}
+
+.video-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures it covers the screen */
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Optional: Darkens video for readability */
+}
+
+.cyber-about {
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 2rem;
+  background-color: #0d0d0d;
+  color: #00f0ff;
+  font-family: 'Orbitron', 'Courier New', monospace;
+}
+
+.headshot-container {
+  width: 120px;
+  height: 120px;
+  border: 2px solid #00f0ff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #00f0ff44;
+}
+
+.headshot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dialogue-box {
+  flex: 1;
+  border: 2px solid #00f0ff;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 12px #00f0ff66;
+  border-radius: 8px;
+  position: relative;
+}
+
+.transmission-label {
+  font-size: 0.9rem;
+  color: #79d9ff;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.dialogue-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #fff;
+  text-shadow: 0 0 5px #24d7ff;
+  font-weight: bold;
+}

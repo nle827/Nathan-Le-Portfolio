@@ -1,0 +1,150 @@
+.text-rgb-wave {
+  font-weight: bold;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, #8a2be2, violet, blue, green, yellow, orange, red);
+  background-size: 400% 100%;
+  background-clip: text;
+  color: transparent;
+  animation: rgbWave 10s linear infinite; /* Adjust speed */
+}
+
+@keyframes rgbWave {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100%;
+  }
+}
+
+@keyframes rgbWaveBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ✅ Header: Bottom RGB Border */
+.header-rgb-border {
+  position: relative;
+}
+
+.header-rgb-border::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px; /* Border thickness */
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, blue, green, yellow, orange, red);
+  background-size: 200% 100%;
+  animation: rgbWaveBorder 4s linear infinite;
+}
+
+/* ✅ Footer: Top RGB Border */
+.footer-rgb-border {
+  position: relative;
+}
+
+.footer-rgb-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px; /* Border thickness */
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, blue, green, yellow, orange, red);
+  background-size: 200% 100%;
+  animation: rgbWaveBorder 4s linear infinite;
+}
+
+.text-cyberpunk-wave {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #24d7ff 25%,
+    #79d9ff 50%,
+    #24d7ff 75%,
+    #ffffff 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: cyberWave 3s linear infinite;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(36, 215, 255, 0.6);
+}
+
+@keyframes cyberWave {
+  0% {
+    background-position: 200% 0;
+  }
+  50% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+
+/* Metallic effect text */
+.text-metallic {
+  font-weight: bold;
+  background: linear-gradient(90deg, #b6b6b6, #e1e1e1, #b6b6b6, #e1e1e1); /* Light metallic gradient */
+  background-size: 200% 100%;
+  background-clip: text;
+  color: transparent;
+  animation: metallicWave 3s linear infinite; /* Speed and animation */
+}
+
+@keyframes metallicWave {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.rgb-text-hover {
+  position: relative;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.rgb-text-hover:hover {
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rgbWave 10s linear infinite;
+}
+
+.typewriter-reveal {
+  white-space: pre-wrap;
+  display: inline;
+  font-family: monospace;
+}
+
+.char {
+  opacity: 0;
+  animation: revealText 1s steps(1) forwards;
+  animation-delay: var(--delay);
+  display: inline;
+}
