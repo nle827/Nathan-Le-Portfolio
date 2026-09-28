@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { IconType } from "react-icons";
 import {
   SiCplusplus,
@@ -18,9 +18,15 @@ import {
   SiTailwindcss,
   SiFramer,
   SiFlask,
+  SiGraphql,
   SiGithub,
+  SiPytest,
+  SiShopify,
+  SiGoogleanalytics,
+  SiHotjar,
   SiFigma,
   SiCanvas,
+  SiAnthropic,
 } from "react-icons/si";
 
 interface ContactInfo {
@@ -59,14 +65,20 @@ const skillIcons: Record<string, IconType> = {
   "Tailwind CSS": SiTailwindcss,
   "Framer Motion": SiFramer,
   Flask: SiFlask,
+  GraphQL: SiGraphql,
   "Git/GitHub": SiGithub,
+  pytest: SiPytest,
+  Shopify: SiShopify,
+  GA4: SiGoogleanalytics,
+  Hotjar: SiHotjar,
   Figma: SiFigma,
   Canva: SiCanvas,
+  Claude: SiAnthropic,
 };
 
 const stats = [
-  { value: "3+", label: "Years Coding" },
-  { value: "8+", label: "Projects Shipped" },
+  { value: "2+", label: "Years in Industry" },
+  { value: "10+", label: "Roles & Projects" },
   { value: "1", label: "Brand Founded" },
 ];
 
@@ -106,7 +118,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
               <p className="text-stone-500 text-center text-sm">Software Developer</p>
 
               <a
-                href="/files/Nathan Le Resume 2025.pdf"
+                href="/files/Nathan Le Resume 2026.pdf"
                 download
                 className="mt-2 px-6 py-2.5 rounded-full bg-[var(--olive-600)] text-white text-sm font-medium hover:bg-[var(--olive-700)] transition-colors"
               >
@@ -114,15 +126,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
               </a>
 
               <div className="flex gap-4 mt-2">
-                <a
-                  href="https://github.com/nle827"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  className="text-stone-500 hover:text-[var(--olive-700)] transition-colors"
-                >
-                  <FaGithub size={20} />
-                </a>
                 <a
                   href="https://www.linkedin.com/in/nathan-le-b56509322/"
                   target="_blank"

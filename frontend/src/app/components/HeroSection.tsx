@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { headerContainerVariants, itemVariant } from "../utils/animations";
 
@@ -14,7 +14,6 @@ interface HeroProps {
 
 const socialLinks = [
   { icon: FaLinkedin, alt: "LinkedIn", url: "https://www.linkedin.com/in/nathan-le-b56509322/" },
-  { icon: FaGithub, alt: "GitHub", url: "https://github.com/nle827" },
   { icon: HiOutlineMail, alt: "Email", url: "/#contact" },
 ];
 
@@ -53,7 +52,7 @@ export default function HeroSection({ shouldReduceMotion }: HeroProps) {
         <motion.div variants={itemVariant} className="flex flex-col items-center md:items-start gap-6 w-full sm:w-auto">
           <div className="flex items-center gap-3">
             <Link
-              href="/#projects"
+              href="/#work"
               className="inline-flex items-center justify-center px-6 py-2.5 rounded-full
                          bg-[var(--olive-600)] text-white text-sm sm:text-base font-medium
                          hover:bg-[var(--olive-700)] transition-colors shadow-sm"
@@ -61,7 +60,7 @@ export default function HeroSection({ shouldReduceMotion }: HeroProps) {
               View My Work
             </Link>
             <a
-              href="/files/Nathan Le Resume 2025.pdf"
+              href="/files/Nathan Le Resume 2026.pdf"
               download
               className="inline-flex items-center justify-center px-6 py-2.5 rounded-full
                          glass text-stone-700 text-sm sm:text-base font-medium
@@ -88,7 +87,7 @@ export default function HeroSection({ shouldReduceMotion }: HeroProps) {
         </motion.div>
       </div>
 
-      {/* Right: Photo + floating badges */}
+      {/* Right: Photo */}
       <motion.div variants={itemVariant} className="relative mx-auto w-full max-w-xs md:max-w-sm">
         <div className="absolute -inset-6 bg-gradient-to-br from-[var(--olive-200)] to-[var(--olive-50)] rounded-[3rem] blur-2xl opacity-60" />
         <div className="relative w-full aspect-[4/5] rounded-tl-[4rem] rounded-tr-2xl rounded-bl-2xl rounded-br-[4rem] overflow-hidden border-4 border-white/70 shadow-xl">
@@ -100,18 +99,6 @@ export default function HeroSection({ shouldReduceMotion }: HeroProps) {
             className="object-cover"
             priority
           />
-        </div>
-
-        {/* Floating badge: experience */}
-        <div className="glass absolute -top-4 -right-4 sm:-right-8 rounded-2xl px-4 py-3 text-center">
-          <div className="text-lg font-bold text-[var(--olive-700)]">3+</div>
-          <div className="text-[10px] uppercase tracking-wide text-stone-500 whitespace-nowrap">Years Coding</div>
-        </div>
-
-        {/* Floating badge: revenue */}
-        <div className="glass absolute -bottom-4 -left-4 sm:-left-8 rounded-2xl px-4 py-3 text-center">
-          <div className="text-lg font-bold text-[var(--olive-700)]">$62K+</div>
-          <div className="text-[10px] uppercase tracking-wide text-stone-500 whitespace-nowrap">Revenue Generated</div>
         </div>
       </motion.div>
     </motion.div>

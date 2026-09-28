@@ -105,6 +105,8 @@ export default function MenacityPage() {
   return (
     <ProjectDetailsClient
       title="Menacity Clothing"
+      role="Founder"
+      dates="Aug 2023 – Dec 2025"
       about={aboutText}
       mainImage={projectMainImage}
       imageFitConfig={imageFitConfig}

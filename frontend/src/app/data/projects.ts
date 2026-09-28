@@ -1,21 +1,24 @@
-const rawTechProjects = [
+import { ProjectProps } from "../components/ProjectCard";
+
+export const workItems: ProjectProps[] = [
   {
-    title: "Yelp Data Analysis",
-    description:
-      "A Yelp data analysis application using PySpark to detect review-rating mismatches, seasonal trends, user behavior, and top phrases.",
+    title: "Homze",
+    role: "Salesforce Developer",
+    dates: "Aug 2025 – Aug 2026",
+    category: "Experience",
     highlights: [
-      "PySpark pipeline processing millions of records",
-      "NLP sentiment analysis with HuggingFace transformers",
-      "React dashboard on a Flask API",
+      "Built a Salesforce-native PM system replacing a 3rd-party tool",
+      "Designed 3 custom objects & Apex services used company-wide",
+      "Built a client-facing Experience Cloud portal, estimate to receipt",
     ],
-    image: "/images/yelp_analysis_logo.webp",
-    link: "/projects/yelp_danalysis",
-    fit: "contain" as const,
+    image: "/images/homze_logo.webp",
+    link: "/projects/homze",
+    fit: "contain",
+    imageBg: "light",
   },
   {
     title: "Talkify",
-    description:
-      "A real-time chat application built with TypeScript and React, replicating core Discord features.",
+    category: "Technical",
     highlights: [
       "Real-time messaging with Socket.io",
       "Full-stack TypeScript, React & Node.js",
@@ -23,41 +26,13 @@ const rawTechProjects = [
     ],
     image: "/images/talkify.webp",
     link: "/projects/talkify",
-    fit: "contain" as const,
+    fit: "contain",
   },
-  {
-    title: "Nathan's Portfolio Website",
-    description:
-      "A minimalist portfolio site built with Next.js, Tailwind, and Framer Motion — rebuilt twice, once to fix what was broken and once to redesign it.",
-    highlights: [
-      "Found & removed a leaked database credential",
-      "Cut asset weight from ~300MB to under 40MB",
-      "Rebuilt twice: fixed, then redesigned",
-    ],
-    image: "/images/portfolio_cover.webp",
-    link: "/projects/website",
-    fit: "cover" as const,
-  },
-  {
-    title: "Reddit Data Search Engine",
-    description:
-      "A search engine for Reddit data using Python, Elasticsearch, and Flask, offering fast, ranked search with a simple user interface.",
-    highlights: [
-      "Elasticsearch-powered ranked search",
-      "Parallelized Python crawler (PRAW + threads)",
-      "BM25 relevance blended with recency decay",
-    ],
-    image: "/images/reddit_analysis_logo.webp",
-    link: "/projects/reddit_analysis",
-    fit: "contain" as const,
-  },
-];
-
-const rawCreativeProjects = [
   {
     title: "Menacity Clothing",
-    description:
-      "Launched a streetwear brand overseeing everything from design to Shopify development.",
+    role: "Founder",
+    dates: "Aug 2023 – Dec 2025",
+    category: "Experience",
     highlights: [
       "$62,000 in sales within 5 months",
       "60,000+ person social community built",
@@ -65,25 +40,62 @@ const rawCreativeProjects = [
     ],
     image: "/images/menacity_logo.webp",
     link: "/projects/menacity",
-    fit: "contain" as const,
+    fit: "contain",
   },
   {
-    title: "Real Estate Marketing",
-    description:
-      "Created branded marketing campaigns for a realtor using Adobe tools and digital strategy.",
+    title: "Yelp Data Analysis",
+    category: "Technical",
+    highlights: [
+      "PySpark pipeline processing millions of records",
+      "NLP sentiment analysis with HuggingFace transformers",
+      "React dashboard on a Flask API",
+    ],
+    image: "/images/yelp_analysis_logo.webp",
+    link: "/projects/yelp_danalysis",
+    fit: "contain",
+  },
+  {
+    title: "Los Angeles Clippers",
+    role: "IT Team Member",
+    dates: "Aug 2025 – Current",
+    category: "Experience",
+    highlights: [
+      "Support venue tech across NBA games & events, near-zero downtime",
+      "Network switch & Ethernet setup for scorer's table and arena systems",
+      "Real-time troubleshooting during live broadcasts",
+    ],
+    image: "/images/clippers_logo.webp",
+    fit: "contain",
+  },
+  {
+    title: "Reddit Data Search Engine",
+    category: "Technical",
+    highlights: [
+      "Elasticsearch-powered ranked search",
+      "Parallelized Python crawler (PRAW + threads)",
+      "BM25 relevance blended with recency decay",
+    ],
+    image: "/images/reddit_analysis_logo.webp",
+    link: "/projects/reddit_analysis",
+    fit: "contain",
+  },
+  {
+    title: "Danny Le Realty",
+    role: "Marketing Specialist",
+    dates: "Sept 2022 – Aug 2023",
+    category: "Experience",
     highlights: [
       "Ran targeted Facebook & Instagram ad campaigns",
       "Designed all brand and listing creative",
-      "Data-driven creative optimization",
+      "Supported CRM data entry & event planning",
     ],
     image: "/images/dlr_logo.webp",
     link: "/projects/real_estate",
-    fit: "contain" as const,
+    fit: "contain",
   },
   {
     title: "Photography Showcase",
-    description:
-      "Captured and edited lifestyle, product, and street visuals with a consistent, moody aesthetic.",
+    category: "Creative",
     highlights: [
       "Portrait, landscape & lifestyle work",
       "Full editing workflow in Lightroom",
@@ -91,12 +103,11 @@ const rawCreativeProjects = [
     ],
     image: "/images/harrypotter_castle.webp",
     link: "/projects/photo",
-    fit: "cover" as const,
+    fit: "cover",
   },
   {
     title: "Videography Showcase",
-    description:
-      "Edited short-form videos with clean cuts, transitions, and music sync for brand and content projects.",
+    category: "Creative",
     highlights: [
       "Short-form social content & reels",
       "Shot on Insta360 Ace Pro 2 & iPhone",
@@ -104,9 +115,18 @@ const rawCreativeProjects = [
     ],
     image: "/images/waterfall.webp",
     link: "/projects/video",
-    fit: "cover" as const,
+    fit: "cover",
+  },
+  {
+    title: "Nathan's Portfolio Website",
+    category: "Technical",
+    highlights: [
+      "Found & removed a leaked database credential",
+      "Cut asset weight from ~300MB to under 40MB",
+      "Rebuilt twice: fixed, then redesigned",
+    ],
+    image: "/images/portfolio_cover.webp",
+    link: "/projects/website",
+    fit: "cover",
   },
 ];
-
-export const techProjects = rawTechProjects.map((p) => ({ ...p, category: "Technical" as const }));
-export const creativeProjects = rawCreativeProjects.map((p) => ({ ...p, category: "Creative" as const }));

@@ -25,9 +25,12 @@ export type GalleryItem = {
 
 type ProjectDetailsProps = {
   title: string;
+  role?: string;
+  dates?: string;
   url?: string;
   about: string;
   mainImage: string;
+  mainImageBg?: "dark" | "light";
   imageFitConfig: {
     mainImageFit: "cover" | "contain" | "fill";
     galleryFits: ("cover" | "contain" | "fill")[];
@@ -40,9 +43,12 @@ type ProjectDetailsProps = {
 
 export default function ProjectDetailsClient({
   title,
+  role,
+  dates,
   url,
   about,
   mainImage,
+  mainImageBg = "dark",
   imageFitConfig,
   galleryItems = [],
   contributions = [],
@@ -58,22 +64,28 @@ export default function ProjectDetailsClient({
       <div className="max-w-5xl mx-auto space-y-6">
         <div className="glass rounded-[2.5rem] p-6 sm:p-10 space-y-8">
           {/* Back Button */}
-          <Link href="/#projects">
+          <Link href="/#work">
             <ClickButton className="inline-block mb-2 px-4 py-2 glass rounded-full text-stone-700 hover:text-[var(--olive-700)] transition text-sm font-medium">
-              ← Back to Projects
+              ← Back to Work
             </ClickButton>
           </Link>
 
           {/* Title + View Website */}
           <div className="flex justify-between items-center flex-wrap gap-4">
-            <motion.h1
+            <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-3xl sm:text-4xl font-bold text-stone-900"
             >
-              {title}
-            </motion.h1>
+              <h1 className="text-3xl sm:text-4xl font-bold text-stone-900">{title}</h1>
+              {(role || dates) && (
+                <p className="text-sm text-stone-500 mt-1">
+                  {role}
+                  {role && dates ? " · " : ""}
+                  {dates}
+                </p>
+              )}
+            </motion.div>
 
             {url && (
               <a href={url} target="_blank" rel="noopener noreferrer">
@@ -85,7 +97,7 @@ export default function ProjectDetailsClient({
           </div>
 
           {/* Main Image */}
-          <div className="relative w-full h-64 bg-stone-900 rounded-2xl overflow-hidden">
+          <div className={`relative w-full h-64 rounded-2xl overflow-hidden ${mainImageBg === "light" ? "bg-white" : "bg-stone-900"}`}>
             <Image
               src={mainImage}
               alt={`${title} main image`}

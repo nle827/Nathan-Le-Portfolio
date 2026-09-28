@@ -7,7 +7,7 @@ import ProjectsSection from "./components/ProjectsSection";
 import ImpactSection from "./components/ImpactSection";
 import AboutSection from "./components/AboutSection";
 import ContactForm from "./components/ContactForm";
-import { techProjects, creativeProjects } from "./data/projects";
+import { workItems } from "./data/projects";
 import { aboutText, skills, education, contactInfo } from "./data/about";
 
 export default function HomePage() {
@@ -23,8 +23,7 @@ export default function HomePage() {
         contactInfo={contactInfo}
       />
       <ProjectsSection
-        techProjects={techProjects}
-        creativeProjects={creativeProjects}
+        workItems={workItems}
         shouldReduceMotion={shouldReduceMotion}
       />
       <ImpactSection shouldReduceMotion={shouldReduceMotion} />

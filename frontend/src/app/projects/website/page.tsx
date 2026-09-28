@@ -8,7 +8,7 @@ import ProjectDetailsClient, {
 const projectMainImage = "/images/portfolio_cover.webp";
 
 // About text
-const aboutText = `This site is itself a case study — I've rebuilt it twice now, and each pass says as much about how I work as any other project here. The first pass fixed what was actually broken: a live database credential committed to git history, roughly 300MB of uncompressed images and video, no SEO metadata because the root layout was a client component, and a mandatory video/sound splash screen gating every visitor. The second pass was a full design reset once the plumbing was sound — I stripped out every sound effect, dropped the custom display fonts for a single clean sans-serif, cut the color palette down to near-monochrome with no leftover "cyberpunk" accent, and rebuilt the page as a single continuous scroll (About, Skills, and Education right after the hero, then Projects, then Contact) instead of four separate routes. Technically it's a small Next.js App Router site — the more interesting part was learning to tell "still needs work" apart from "actually done," and being willing to redo a whole visual pass once I was tired of the first one.`;
+const aboutText = `This site is itself a case study — I've rebuilt it several times now, and each pass says as much about how I work as any other project here. The first pass fixed what was actually broken: a live database credential committed to git history, roughly 300MB of uncompressed images and video, no SEO metadata because the root layout was a client component, and a mandatory video/sound splash screen gating every visitor. The passes after that were design resets once the plumbing was sound — moving from a neon "cyberpunk" theme to a flat monochrome look, then again to the glass-panel, olive-accent design you're looking at now, removing sound effects entirely along the way and merging separate About/Projects/Contact pages into one continuous scroll. The most recent pass merged personal projects and real work experience (Homze, the LA Clippers, Menacity) into a single "Work" section, since a hiring manager cares more about what I've actually done than which bucket it falls into. Technically it's a small Next.js App Router site — the more interesting part was learning to tell "still needs work" apart from "actually done," and being willing to redo a visual pass whenever the previous one stopped being the right call.`;
 
 // Tech stack
 const techStack: TechStackCategory[] = [
@@ -36,7 +36,7 @@ const contributions: Contribution[] = [
   {
     heading: "2. UI/UX & Styling",
     items: [
-      "Near-monochrome palette (white, slate, near-black) with no accent color competing for attention.",
+      "Glass-panel cards on a soft gradient background with a single olive accent color, no leftover cyberpunk theming.",
       "Single sans-serif type family (Inter) for both headings and body text, replacing two custom display fonts.",
       "Framer Motion animations for smooth section transitions and interactive hover states.",
       "Responsive Tailwind CSS utility classes to ensure consistent design across breakpoints.",
@@ -45,7 +45,7 @@ const contributions: Contribution[] = [
   {
     heading: "3. Interactive Features",
     items: [
-      "One continuous scrolling page (About/Skills/Education, then Projects, then Contact) with anchor-link navigation instead of four separate routes.",
+      "One continuous scrolling page (About, then Work, then Impact, then Contact) with anchor-link navigation instead of four separate routes.",
       "No sound effects anywhere on the site — removed entirely as part of the redesign.",
       "Gallery component with custom aspect ratio handling for consistent image framing.",
       "Reveal animations run on mount rather than on scroll-into-view, so content is never left invisible if a browser's intersection observer never fires.",

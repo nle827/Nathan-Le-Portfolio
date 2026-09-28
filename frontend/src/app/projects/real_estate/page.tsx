@@ -9,7 +9,7 @@ import ProjectDetailsClient, {
 const projectMainImage = "/images/dlr_logo.webp";
 
 // About text
-const aboutText = `Danny Le Realty needed marketing that looked as sharp as the properties it was selling, in a market where most competing agents run nearly identical ad campaigns. I took on brand and digital marketing end-to-end — designing listing graphics and brochures, shooting and editing property video content, and running targeted Facebook and Instagram ad campaigns aimed at active buyers and sellers. I also cleaned up the WordPress listing pages and tightened visual consistency across the site, social channels, and print materials, then used Google Analytics and platform-level insights to see which content and ad creative were actually driving engagement so I could redirect effort toward what worked instead of spreading it evenly across everything.`;
+const aboutText = `Danny Le Realty needed marketing that looked as sharp as the properties it was selling, in a market where most competing agents run nearly identical ad campaigns. I took on brand and digital marketing end-to-end — designing listing graphics and brochures, shooting and editing property video content, and running targeted Facebook and Instagram ad campaigns aimed at active buyers and sellers. Alongside the creative work, I handled the less visible operational side: CRM data entry and campaign workflow maintenance to keep lead management running smoothly, and cross-functional support for event planning, digital asset creation, and client follow-up. I also cleaned up the WordPress listing pages and tightened visual consistency across the site, social channels, and print materials, then used Google Analytics and platform-level insights to see which content and ad creative were actually driving engagement so I could redirect effort toward what worked instead of spreading it evenly across everything.`;
 
 // Tech stack
 const techStack: TechStackCategory[] = [
@@ -77,6 +77,13 @@ const contributions: Contribution[] = [
       "Led the onboarding and training process for new hires to ensure smooth integration and alignment with goals.",
     ],
   },
+  {
+    heading: "7. Administrative & CRM Support",
+    items: [
+      "Supported CRM data entry and campaign workflow maintenance to ensure lead management efficiency.",
+      "Provided cross-functional administrative support for event planning, digital asset creation, and client follow-up.",
+    ],
+  },
 ];
 
 // Gallery items
@@ -98,6 +105,8 @@ export default function DannyLeRealtyPage() {
   return (
     <ProjectDetailsClient
       title="Danny Le Realty"
+      role="Marketing Specialist"
+      dates="Sept 2022 – Aug 2023"
       about={aboutText}
       mainImage={projectMainImage}
       imageFitConfig={imageFitConfig}
