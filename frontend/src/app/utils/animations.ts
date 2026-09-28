@@ -1,6 +1,6 @@
 export const headerContainerVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.5 } },
+  visible: { transition: { staggerChildren: 0.1 } },
 };
 
 export const itemVariant = {
@@ -8,6 +8,6 @@ export const itemVariant = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.42, ease: "easeOut" },
+    transition: { duration: 0.35, ease: "easeOut" },
   },
 };
