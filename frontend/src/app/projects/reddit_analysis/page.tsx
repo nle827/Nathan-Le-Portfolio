@@ -1,9 +1,6 @@
 "use client";
 
-import ProjectDetailsClient, {
-  TechStackCategory,
-  GalleryItem,
-} from "../../components/ProjectDetailsClient";
+import ProjectDetailsClient, { TechStackCategory } from "../../components/ProjectDetailsClient";
 
 const projectMainImage = "/images/reddit_analysis_logo.webp";
 
@@ -28,14 +25,9 @@ const highlights = [
   "Coverage capped at ~1,000 hot posts per subreddit due to Reddit API limits",
 ];
 
-// Gallery items
-const galleryItems: GalleryItem[] = [
-  { type: "image", src: "/images/reddit_analysis_example2.webp", aspect: "16-9", fit: "fill" },
-];
-
 const imageFitConfig = {
   mainImageFit: "contain" as const,
-  galleryFits: ["fill"] as ("contain" | "cover" | "fill")[],
+  galleryFits: [] as ("contain" | "cover" | "fill")[],
 };
 
 export default function RedditAnalysisPage() {
@@ -45,10 +37,10 @@ export default function RedditAnalysisPage() {
       about={aboutText}
       mainImage={projectMainImage}
       imageFitConfig={imageFitConfig}
-      galleryItems={galleryItems}
+      galleryItems={[]}
       highlights={highlights}
       techStack={techStack}
-      galleryCols={1}
+      galleryCols={0}
     />
   );
 }

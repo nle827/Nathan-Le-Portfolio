@@ -1,9 +1,6 @@
 "use client";
 
-import ProjectDetailsClient, {
-  TechStackCategory,
-  GalleryItem,
-} from "../../components/ProjectDetailsClient";
+import ProjectDetailsClient, { TechStackCategory } from "../../components/ProjectDetailsClient";
 
 const projectMainImage = "/images/yelp_analysis_logo.webp";
 
@@ -28,16 +25,9 @@ const highlights = [
   "Found a measurable divergence between star ratings and review sentiment in several markets",
 ];
 
-// Gallery
-const galleryItems: GalleryItem[] = [
-  { type: "image", src: "/images/yelp_danalysis_home.webp", fit: "cover", aspect: "16-9" },
-  { type: "image", src: "/images/yelp_danalysis_sentiment.webp", fit: "fill", aspect: "16-9" },
-  { type: "image", src: "/images/yelp_danalysis_seasonal.webp", fit: "fill", aspect: "16-9" },
-];
-
 const imageFitConfig = {
   mainImageFit: "contain" as const,
-  galleryFits: ["cover", "fill", "fill"] as ("contain" | "cover" | "fill")[],
+  galleryFits: [] as ("contain" | "cover" | "fill")[],
 };
 
 export default function YelpAnalysisPage() {
@@ -47,10 +37,10 @@ export default function YelpAnalysisPage() {
       about={aboutText}
       mainImage={projectMainImage}
       imageFitConfig={imageFitConfig}
-      galleryItems={galleryItems}
+      galleryItems={[]}
       highlights={highlights}
       techStack={techStack}
-      galleryCols={1}
+      galleryCols={0}
     />
   );
 }
