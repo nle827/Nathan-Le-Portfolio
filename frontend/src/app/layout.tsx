@@ -13,15 +13,15 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://nathan-le-portfolio.vercel.app"),
   title: {
-    default: "Nathan Le — Software Developer",
+    default: "Nathan Le | Software Developer",
     template: "%s | Nathan Le",
   },
   description:
-    "Nathan Le is a software developer who builds and ships full products — engineering, brand, and visuals. Explore technical and creative projects.",
+    "Nathan Le is a software developer in Los Angeles. He builds full products: engineering, brand, and visuals. Explore his technical and creative projects.",
   openGraph: {
-    title: "Nathan Le — Software Developer",
+    title: "Nathan Le | Software Developer",
     description:
-      "Software developer who builds and ships full products — engineering, brand, and visuals.",
+      "Software developer in Los Angeles who builds full products: engineering, brand, and visuals.",
     url: "https://nathan-le-portfolio.vercel.app",
     siteName: "Nathan Le",
     images: [{ url: "/images/headshot.webp", width: 1200, height: 1200 }],
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nathan Le — Software Developer",
+    title: "Nathan Le | Software Developer",
     description:
-      "Software developer who builds and ships full products — engineering, brand, and visuals.",
+      "Software developer in Los Angeles who builds full products: engineering, brand, and visuals.",
     images: ["/images/headshot.webp"],
   },
 };

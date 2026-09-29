@@ -21,7 +21,7 @@ const imageFitConfig = {
   galleryFits: galleryItems.map(() => "contain" as const),
 };
 
-const aboutText = `Video adds a time dimension to the same instincts I use in photography — pacing, sound, and motion on top of composition and light. This reel is a mix of brand video for Menacity Clothing and short-form cinematic b-roll, shot on an Insta360 Ace Pro 2 and iPhone and cut in Premiere Pro and CapCut. The throughline is trying to make a clip feel intentional in the first two seconds, since that's realistically all the attention a short-form video gets before someone decides whether to keep watching.`;
+const aboutText = `Video builds on the same instincts as photography, just with pacing, sound, and motion added on top of composition and light. This reel mixes brand video for Menacity Clothing with short-form cinematic b-roll, shot on an Insta360 Ace Pro 2 and iPhone and cut in Premiere Pro and CapCut. My rule of thumb: a clip needs to feel intentional in the first two seconds, because that's about how long you get before someone decides whether to keep watching.`;
 
 const techStack: TechStackCategory[] = [
   {

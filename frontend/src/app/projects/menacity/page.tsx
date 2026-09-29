@@ -6,7 +6,7 @@ import ProjectDetailsClient, { GalleryItem } from "../../components/ProjectDetai
 const projectMainImage = "/images/menacity_logo.webp";
 
 // About text
-const aboutText = `Menacity Clothing started as a question: could I take a streetwear brand from a blank page to real revenue entirely on my own — design, storefront, marketing, and fulfillment, all of it? As the sole creative and operational lead, I designed the brand identity, built the Shopify storefront, sourced manufacturing overseas, and ran the marketing across social and email. In its first five months it generated $62,000 in sales, and over its first two years grew a community of 60,000+ followers and drew 150,000+ site sessions. Menacity is the clearest proof I have that I can take an idea from concept to a real, revenue-generating product, not just the software behind one.`;
+const aboutText = `I founded Menacity Clothing in 2023 as an independent streetwear brand and ran every part of it myself: brand identity, the Shopify storefront, manufacturing, marketing, fulfillment. In its first five months it did $62,000 in sales. Over its first two years it grew a community of more than 60,000 followers and drew over 150,000 site sessions. It's the clearest example I have of taking something from an idea to an actual, running business.`;
 
 const highlights = [
   "$62,000 in sales within the first 5 months",

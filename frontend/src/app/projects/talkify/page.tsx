@@ -9,7 +9,7 @@ const imageFitConfig = {
   galleryFits: [] as ("contain" | "cover" | "fill")[],
 };
 
-const aboutText = `Talkify is a full-stack, Discord-style chat app I built to go deeper on real-time systems than a typical CRUD project — private messaging, group "spaces," and live message edits all had to stay in sync across clients without the UI ever feeling laggy or out of order. The core messaging, friend system, and space/channel model all work end to end; live online-presence indicators are still in progress — the open problem there is keeping accurate real-time state without flooding the socket connection with presence updates on every reconnect.`;
+const aboutText = `Talkify is a full-stack, Discord-style chat app. I built it to go deeper on real-time systems than a typical class project: private messaging, group "spaces," and live message edits all need to stay in sync across clients without the UI lagging or showing things out of order. The messaging, friend system, and channel model all work end to end. Online presence indicators are still a work in progress, mainly because I haven't found a clean way to send presence updates without flooding the socket connection every time someone reconnects.`;
 
 const techStack: TechStackCategory[] = [
   {

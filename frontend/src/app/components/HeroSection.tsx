@@ -46,7 +46,7 @@ export default function HeroSection({ shouldReduceMotion }: HeroProps) {
         </motion.p>
 
         <motion.p variants={itemVariant} className="text-stone-600 max-w-sm mb-8">
-          I build complete products — software, brand, and everything in between — rather than just the code behind them.
+          I build software, brand, and everything in between. I like owning the whole product from start to finish.
         </motion.p>
 
         <motion.div variants={itemVariant} className="flex flex-col items-center md:items-start gap-6 w-full sm:w-auto">

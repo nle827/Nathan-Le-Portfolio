@@ -4,7 +4,7 @@ import ProjectDetailsClient, { TechStackCategory } from "../../components/Projec
 
 const projectMainImage = "/images/homze_logo.webp";
 
-const aboutText = `Homze is an interior-trades home-improvement company (flooring, painting, roofing, siding) that runs its entire sales-to-completion pipeline through Salesforce. I joined as one of two developers and owned the interior-trades half of that pipeline end to end — from the estimate a customer sees first, through the paperwork that gets a crew scheduled, to the invoice that closes out a job. The most substantial piece of that work was replacing a third-party project management tool with a Salesforce-native system I designed and built myself. I also built a guest-accessible Experience Cloud portal so clients can watch a job move from estimate to invoice to receipt without calling in, and contributed core features to an internal Python compiler that powers pricing logic across all 8 of the company's trade modules.`;
+const aboutText = `Homze is an interior-trades home-improvement company that runs its entire sales pipeline through Salesforce: flooring, painting, roofing, siding. I joined as one of two developers and owned the interior-trades side of that pipeline. The biggest project was replacing a third-party project management tool with a Salesforce-native system I designed and built myself, covering everything from a signed estimate to the final contractor invoice. I also built a guest-facing Experience Cloud portal so clients can check on a job without calling in, and I contributed to an internal Python compiler that handles pricing across all 8 of the company's trade modules.`;
 
 const techStack: TechStackCategory[] = [
   {

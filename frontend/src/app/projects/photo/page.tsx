@@ -9,7 +9,7 @@ import ProjectDetailsClient, {
 const projectMainImage = "/images/harrypotter_castle.webp";
 
 // About text
-const aboutText = `Photography is where I get to work purely on the creative side — no client brief, no deadline, just building an eye for light, composition, and color. This set spans travel and architecture shots from trips through Japan, a product shoot for my own brand, and a live event, edited to keep consistent color and exposure within each set even as the subject matter varies. Shot mostly on a Fuji X100T and iPhone, edited in Lightroom.`;
+const aboutText = `Photography is the side project where I don't have a client brief or a deadline, just time to work on composition, light, and color. This set covers travel and architecture shots from trips through Japan, a product shoot for my own brand, and a live event. I edited each set to keep consistent color and exposure even though the subjects are pretty different. Shot mostly on a Fuji X100T and iPhone, edited in Lightroom.`;
 
 const techStack: TechStackCategory[] = [
   {

@@ -7,7 +7,7 @@ import ProjectDetailsClient, {
 
 const projectMainImage = "/images/dlr_logo.webp";
 
-const aboutText = `Danny Le Realty needed marketing that looked as sharp as the properties it was selling, in a market where most competing agents run nearly identical ad campaigns. I took on brand and digital marketing end-to-end — designing listing graphics and brochures, shooting and editing property video content, and running targeted Facebook and Instagram ad campaigns aimed at active buyers and sellers. Alongside the creative work, I handled the less visible operational side: CRM data entry, campaign workflow maintenance, and cross-functional support for event planning and client follow-up.`;
+const aboutText = `Danny Le Realty needed marketing that looked as sharp as the properties it was selling, in a market where most agents run nearly identical campaigns. I handled brand and digital marketing for them: listing graphics, brochures, property video, and targeted Facebook and Instagram ad campaigns for active buyers and sellers. I also handled the less visible work behind that: CRM data entry, campaign workflow, and support for event planning and client follow-up.`;
 
 const techStack: TechStackCategory[] = [
   {

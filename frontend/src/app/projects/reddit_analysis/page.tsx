@@ -4,7 +4,7 @@ import ProjectDetailsClient, { TechStackCategory } from "../../components/Projec
 
 const projectMainImage = "/images/reddit_analysis_logo.webp";
 
-const aboutText = `I built this as a search engine over live sports discussion on Reddit — the goal was to let someone query a topic and get back ranked, relevant posts instead of scrolling manually through dozens of subreddits. The pipeline has three parts: a Python crawler (PRAW + BeautifulSoup) that pulls hot posts and their linked pages in parallel with a thread pool, an Elasticsearch index tuned for text relevance and recency, and a Flask app serving both a search UI and a JSON API. The interesting tradeoff is in the crawler: keyword filtering only runs against post titles, not comments or linked text, which keeps queries fast but misses some relevant discussion buried further in a thread.`;
+const aboutText = `This is a search engine over sports discussion on Reddit, built so someone can search a topic and get ranked, relevant posts back instead of scrolling through dozens of subreddits by hand. It has three parts: a Python crawler using PRAW and BeautifulSoup that pulls hot posts and their linked pages in parallel, an Elasticsearch index tuned for relevance and recency, and a Flask app serving a search UI and a JSON API. One tradeoff worth knowing about: keyword filtering only checks post titles, not comments, so it stays fast but can miss relevant discussion buried in a thread.`;
 
 const techStack: TechStackCategory[] = [
   {
