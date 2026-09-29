@@ -27,6 +27,7 @@ import {
   SiFigma,
   SiCanvas,
   SiAnthropic,
+  SiDavinciresolve,
 } from "react-icons/si";
 
 interface ContactInfo {
@@ -74,11 +75,12 @@ const skillIcons: Record<string, IconType> = {
   Figma: SiFigma,
   Canva: SiCanvas,
   Claude: SiAnthropic,
+  "DaVinci Resolve": SiDavinciresolve,
 };
 
 const stats = [
   { value: "2+", label: "Years in Industry" },
-  { value: "10+", label: "Roles & Projects" },
+  { value: "9+", label: "Roles & Projects" },
   { value: "1", label: "Brand Founded" },
 ];
 

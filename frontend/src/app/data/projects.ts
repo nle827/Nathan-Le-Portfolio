@@ -1,6 +1,7 @@
 import { ProjectProps } from "../components/ProjectCard";
 
 export const workItems: ProjectProps[] = [
+  // Experience, reverse-chronological
   {
     title: "Homze",
     role: "Salesforce Developer",
@@ -14,18 +15,18 @@ export const workItems: ProjectProps[] = [
     image: "/images/homze_logo.webp",
     link: "/projects/homze",
     fit: "contain",
-    imageBg: "light",
   },
   {
-    title: "Talkify",
-    category: "Technical",
+    title: "Los Angeles Clippers",
+    role: "IT Team Member",
+    dates: "Aug 2025 – Current",
+    category: "Experience",
     highlights: [
-      "Real-time messaging with Socket.io",
-      "Full-stack TypeScript, React & Node.js",
-      "JWT auth with bcrypt-hashed credentials",
+      "Support venue tech across NBA games & events, near-zero downtime",
+      "Network switch & Ethernet setup for scorer's table and arena systems",
+      "Real-time troubleshooting during live broadcasts",
     ],
-    image: "/images/talkify.webp",
-    link: "/projects/talkify",
+    image: "/images/clippers_logo.webp",
     fit: "contain",
   },
   {
@@ -43,6 +44,34 @@ export const workItems: ProjectProps[] = [
     fit: "contain",
   },
   {
+    title: "Danny Le Realty",
+    role: "Marketing Specialist",
+    dates: "Sept 2022 – Aug 2023",
+    category: "Experience",
+    highlights: [
+      "Ran targeted Facebook & Instagram ad campaigns",
+      "Designed all brand and listing creative",
+      "Supported CRM data entry & event planning",
+    ],
+    image: "/images/dlr_logo.webp",
+    link: "/projects/real_estate",
+    fit: "contain",
+  },
+
+  // Technical projects
+  {
+    title: "Talkify",
+    category: "Technical",
+    highlights: [
+      "Real-time messaging with Socket.io",
+      "Full-stack TypeScript, React & Node.js",
+      "JWT auth with bcrypt-hashed credentials",
+    ],
+    image: "/images/talkify.webp",
+    link: "/projects/talkify",
+    fit: "contain",
+  },
+  {
     title: "Yelp Data Analysis",
     category: "Technical",
     highlights: [
@@ -52,19 +81,6 @@ export const workItems: ProjectProps[] = [
     ],
     image: "/images/yelp_analysis_logo.webp",
     link: "/projects/yelp_danalysis",
-    fit: "contain",
-  },
-  {
-    title: "Los Angeles Clippers",
-    role: "IT Team Member",
-    dates: "Aug 2025 – Current",
-    category: "Experience",
-    highlights: [
-      "Support venue tech across NBA games & events, near-zero downtime",
-      "Network switch & Ethernet setup for scorer's table and arena systems",
-      "Real-time troubleshooting during live broadcasts",
-    ],
-    image: "/images/clippers_logo.webp",
     fit: "contain",
   },
   {
@@ -79,20 +95,8 @@ export const workItems: ProjectProps[] = [
     link: "/projects/reddit_analysis",
     fit: "contain",
   },
-  {
-    title: "Danny Le Realty",
-    role: "Marketing Specialist",
-    dates: "Sept 2022 – Aug 2023",
-    category: "Experience",
-    highlights: [
-      "Ran targeted Facebook & Instagram ad campaigns",
-      "Designed all brand and listing creative",
-      "Supported CRM data entry & event planning",
-    ],
-    image: "/images/dlr_logo.webp",
-    link: "/projects/real_estate",
-    fit: "contain",
-  },
+
+  // Creative projects
   {
     title: "Photography Showcase",
     category: "Creative",
@@ -115,18 +119,6 @@ export const workItems: ProjectProps[] = [
     ],
     image: "/images/waterfall.webp",
     link: "/projects/video",
-    fit: "cover",
-  },
-  {
-    title: "Nathan's Portfolio Website",
-    category: "Technical",
-    highlights: [
-      "Found & removed a leaked database credential",
-      "Cut asset weight from ~300MB to under 40MB",
-      "Rebuilt twice: fixed, then redesigned",
-    ],
-    image: "/images/portfolio_cover.webp",
-    link: "/projects/website",
     fit: "cover",
   },
 ];

@@ -81,7 +81,6 @@ export default function HomzePage() {
       dates="Aug 2025 – Aug 2026"
       about={aboutText}
       mainImage={projectMainImage}
-      mainImageBg="light"
       imageFitConfig={imageFitConfig}
       galleryItems={[]}
       contributions={contributions}

@@ -31,6 +31,7 @@ export const skills = {
     "Adobe Photoshop",
     "Illustrator",
     "Premiere Pro",
+    "DaVinci Resolve",
     "Lightroom",
     "Figma",
     "Canva",
@@ -44,7 +45,7 @@ export const education = [
     school: "University of California, Riverside",
     degree: "B.S. Computer Science",
     notes:
-      "Graduated from UCR's Marlan and Rosemary Bourns College of Engineering with a focus in Computer Science. Involved in Student Body Government as a Senator.",
+      "Graduated from UCR's Marlan and Rosemary Bourns College of Engineering with a focus in Computer Science.",
   },
 ];
 
