@@ -66,7 +66,7 @@ export default function HeroSection({ shouldReduceMotion }: HeroProps) {
                          glass text-stone-700 text-sm sm:text-base font-medium
                          hover:text-[var(--olive-700)] transition-colors"
             >
-              Download CV
+              Download Resume
             </a>
           </div>
 

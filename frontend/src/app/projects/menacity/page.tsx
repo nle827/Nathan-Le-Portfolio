@@ -113,7 +113,6 @@ export default function MenacityPage() {
       galleryItems={galleryItems}
       contributions={contributions}
       galleryCols={3}
-      url="https://www.menacityclothing.com"
     />
   );
 }

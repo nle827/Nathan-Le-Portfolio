@@ -86,7 +86,6 @@ export default function HomzePage() {
       contributions={contributions}
       techStack={techStack}
       galleryCols={0}
-      url="https://homze.com"
     />
   );
 }
