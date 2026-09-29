@@ -3,13 +3,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { HiCheck } from "react-icons/hi";
 import ClickButton from "../components/ClickButton";
 import ContactFormWrapper from "../components/ContactFormWrapper";
-
-export type Contribution = {
-  heading: string;
-  items: string[];
-};
 
 export type TechStackCategory = {
   heading: string;
@@ -36,7 +32,7 @@ type ProjectDetailsProps = {
     galleryFits: ("cover" | "contain" | "fill")[];
   };
   galleryItems?: GalleryItem[];
-  contributions?: Contribution[];
+  highlights?: string[];
   techStack?: TechStackCategory[];
   galleryCols?: number;
 };
@@ -51,7 +47,7 @@ export default function ProjectDetailsClient({
   mainImageBg = "dark",
   imageFitConfig,
   galleryItems = [],
-  contributions = [],
+  highlights = [],
   techStack = [],
   galleryCols,
 }: ProjectDetailsProps) {
@@ -115,6 +111,23 @@ export default function ProjectDetailsClient({
             <p className="text-stone-600 leading-relaxed">{about}</p>
           </section>
 
+          {/* Highlights */}
+          {highlights.length > 0 && (
+            <section>
+              <h2 className="text-xs font-semibold tracking-widest uppercase text-[var(--olive-600)] mb-3">
+                Highlights
+              </h2>
+              <ul className="flex flex-col gap-2">
+                {highlights.map((point, i) => (
+                  <li key={i} className="flex items-start gap-2 text-stone-600">
+                    <HiCheck className="mt-1 shrink-0 text-[var(--olive-600)]" size={16} />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
           {/* Tech Stack */}
           {techStack.length > 0 && (
             <section>
@@ -132,27 +145,6 @@ export default function ProjectDetailsClient({
                         </span>
                       ))}
                     </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-
-          {/* Contributions */}
-          {contributions.length > 0 && (
-            <section>
-              <h2 className="text-xs font-semibold tracking-widest uppercase text-[var(--olive-600)] mb-3">
-                Contributions
-              </h2>
-              <div className="flex flex-col gap-5">
-                {contributions.map((contribution, idx) => (
-                  <div key={idx}>
-                    <h3 className="text-sm font-semibold text-stone-800 mb-1">{contribution.heading}</h3>
-                    <ul className="list-disc list-inside text-stone-600 text-sm space-y-0.5">
-                      {contribution.items.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
                   </div>
                 ))}
               </div>
