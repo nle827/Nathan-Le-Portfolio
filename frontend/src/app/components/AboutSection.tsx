@@ -79,7 +79,7 @@ const skillIcons: Record<string, IconType> = {
 };
 
 const stats = [
-  { value: "2+", label: "Years in Industry" },
+  { value: "4+", label: "Years in Industry" },
   { value: "7+", label: "Roles & Projects" },
   { value: "1", label: "Brand Founded" },
 ];
