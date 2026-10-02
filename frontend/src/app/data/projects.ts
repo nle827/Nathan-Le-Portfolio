@@ -97,28 +97,7 @@ export const workItems: ProjectProps[] = [
   },
 
   // Creative projects
-  {
-    title: "Photography Showcase",
-    category: "Creative",
-    highlights: [
-      "Portrait, landscape & lifestyle work",
-      "Full editing workflow in Lightroom",
-      "Consistent visual tone across a set",
-    ],
-    image: "/images/harrypotter_castle.webp",
-    link: "/projects/photo",
-    fit: "cover",
-  },
-  {
-    title: "Videography Showcase",
-    category: "Creative",
-    highlights: [
-      "Short-form social content & reels",
-      "Shot on Insta360 Ace Pro 2 & iPhone",
-      "Edited in Premiere Pro & CapCut",
-    ],
-    image: "/images/waterfall.webp",
-    link: "/projects/video",
-    fit: "cover",
-  },
+  // Photography Showcase and Videography Showcase temporarily removed
+  // (2026-10-01) pending a content refresh. Pages still exist at
+  // /projects/photo and /projects/video - re-add entries here when ready.
 ];
