@@ -21,7 +21,7 @@ const imageFitConfig = {
   galleryFits: galleryItems.map(() => "cover" as const),
 };
 
-const aboutText = `Video builds on the same instincts as photography, just with pacing, sound, and motion added on top of composition and light. This reel mixes a fashion and motion studio shoot, a cinematic product reveal, and short-form brand and travel clips, shot on a DJI Osmo Pocket 3 and iPhone and cut in Premiere Pro and CapCut. My rule of thumb: a clip needs to feel intentional in the first two seconds, because that's about how long you get before someone decides whether to keep watching.`;
+const aboutText = `Video builds on the same instincts as photography, just with pacing, sound, and motion added on top of composition and light. This reel mixes a fashion and motion studio shoot, a cinematic product reveal, and short-form brand clips, shot on a DJI Osmo Pocket 3 and iPhone and cut in Premiere Pro and CapCut. My rule of thumb: a clip needs to feel intentional in the first two seconds, because that's about how long you get before someone decides whether to keep watching.`;
 
 const techStack: TechStackCategory[] = [
   {
@@ -37,7 +37,7 @@ const techStack: TechStackCategory[] = [
 const highlights = [
   "Fashion and motion studio shoot",
   "Cinematic product reveal",
-  "Short-form brand and travel clips",
+  "Short-form brand clips",
   "Shot on a DJI Osmo Pocket 3 and iPhone, edited in Premiere Pro and CapCut",
 ];
 

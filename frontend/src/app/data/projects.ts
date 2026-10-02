@@ -101,13 +101,13 @@ export const workItems: ProjectProps[] = [
     title: "Photography Showcase",
     category: "Creative",
     highlights: [
-      "Travel photography from Thailand and Vietnam",
+      "Architecture and street photography from Thailand and Vietnam",
       "Studio portrait session shot in silhouette",
       "Shot on a Fujifilm XM5, edited in Lightroom",
     ],
-    image: "/images/photography/IMG_0285.webp",
+    image: "/images/harrypotter_castle.webp",
     link: "/projects/photo",
-    fit: "contain",
+    fit: "cover",
   },
   {
     title: "Videography Showcase",

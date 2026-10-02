@@ -9,7 +9,7 @@ import ProjectDetailsClient, {
 const projectMainImage = "/images/photography/IMG_0285.webp";
 
 // About text
-const aboutText = `Photography is the side project where I don't have a client brief or a deadline, just time to work on composition, light, and color. This set covers travel shots from trips through Thailand and Vietnam, plus a studio portrait session shot entirely in silhouette. Shot on a Fujifilm XM5 and iPhone, edited in Lightroom.`;
+const aboutText = `Photography is the side project where I don't have a client brief or a deadline, just time to work on composition, light, and color. This set spans architecture and street photography from Thailand and Vietnam, plus a studio portrait session shot entirely in silhouette. Shot on a Fujifilm XM5 and iPhone, edited in Lightroom.`;
 
 const techStack: TechStackCategory[] = [
   {
@@ -23,7 +23,7 @@ const techStack: TechStackCategory[] = [
 ];
 
 const highlights = [
-  "Travel photography from trips through Thailand and Vietnam",
+  "Architecture and street photography from Thailand and Vietnam",
   "Studio portrait session shot entirely in silhouette",
   "Full shoot-to-edit workflow: composition and lighting on-site, color grading in Lightroom",
   "Shot on a Fujifilm XM5",
