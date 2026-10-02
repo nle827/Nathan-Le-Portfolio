@@ -7,26 +7,26 @@ import ProjectDetailsClient, {
 
 const projectMainImage = "/images/waterfall.webp";
 
-// Gallery items (curated to the strongest 5 of 9)
+// Gallery items
 const galleryItems: GalleryItem[] = [
-  { type: "video", src: "/videos/video1.webm", aspect: "9-16", fit: "contain" },
-  { type: "video", src: "/videos/video5.webm", aspect: "9-16", fit: "contain" },
-  { type: "video", src: "/videos/video6.webm", aspect: "9-16", fit: "contain" },
-  { type: "video", src: "/videos/video7.webm", aspect: "9-16", fit: "contain" },
-  { type: "video", src: "/videos/video9.webm", aspect: "9-16", fit: "contain" },
+  { type: "video", src: "/videos/videography/motion.webm", aspect: "9-16", fit: "cover" },
+  { type: "video", src: "/videos/videography/showroom.webm", aspect: "9-16", fit: "cover" },
+  { type: "video", src: "/videos/videography/video5.webm", aspect: "9-16", fit: "contain" },
+  { type: "video", src: "/videos/videography/Review.webm", aspect: "9-16", fit: "cover" },
+  { type: "video", src: "/videos/videography/Topanga.webm", aspect: "9-16", fit: "cover" },
 ];
 
 const imageFitConfig = {
   mainImageFit: "contain" as const,
-  galleryFits: galleryItems.map(() => "contain" as const),
+  galleryFits: galleryItems.map(() => "cover" as const),
 };
 
-const aboutText = `Video builds on the same instincts as photography, just with pacing, sound, and motion added on top of composition and light. This reel mixes brand video for Menacity Clothing with short-form cinematic b-roll, shot on an Insta360 Ace Pro 2 and iPhone and cut in Premiere Pro and CapCut. My rule of thumb: a clip needs to feel intentional in the first two seconds, because that's about how long you get before someone decides whether to keep watching.`;
+const aboutText = `Video builds on the same instincts as photography, just with pacing, sound, and motion added on top of composition and light. This reel mixes a fashion and motion studio shoot, a cinematic product reveal, and short-form brand and travel clips, shot on a DJI Osmo Pocket 3 and iPhone and cut in Premiere Pro and CapCut. My rule of thumb: a clip needs to feel intentional in the first two seconds, because that's about how long you get before someone decides whether to keep watching.`;
 
 const techStack: TechStackCategory[] = [
   {
     heading: "Cameras & Gear",
-    items: ["Insta360 Ace Pro 2", "iPhone 15 Pro Max"],
+    items: ["DJI Osmo Pocket 3", "iPhone 15 Pro Max"],
   },
   {
     heading: "Editing Software",
@@ -35,10 +35,10 @@ const techStack: TechStackCategory[] = [
 ];
 
 const highlights = [
-  "Brand video production for Menacity Clothing",
-  "Short-form cinematic b-roll and social content",
-  "Shot on Insta360 Ace Pro 2 and iPhone 15 Pro Max",
-  "Edited in Premiere Pro and CapCut with an eye for pacing and sound",
+  "Fashion and motion studio shoot",
+  "Cinematic product reveal",
+  "Short-form brand and travel clips",
+  "Shot on a DJI Osmo Pocket 3 and iPhone, edited in Premiere Pro and CapCut",
 ];
 
 export default function VideographyPage() {

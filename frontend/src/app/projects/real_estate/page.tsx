@@ -30,7 +30,7 @@ const highlights = [
 
 // Gallery items
 const galleryItems: GalleryItem[] = [
-  { type: "video", src: "/videos/Topanga.webm", aspect: "9-16", fit: "cover" },
+  { type: "video", src: "/videos/videography/Topanga.webm", aspect: "9-16", fit: "cover" },
   { type: "video", src: "/videos/Update.webm", aspect: "9-16", fit: "cover" },
   { type: "image", src: "/images/dlr_page1.webp", aspect: "9-16", fit: "contain" },
 ];

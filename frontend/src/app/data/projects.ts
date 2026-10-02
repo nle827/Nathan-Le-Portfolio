@@ -97,7 +97,28 @@ export const workItems: ProjectProps[] = [
   },
 
   // Creative projects
-  // Photography Showcase and Videography Showcase temporarily removed
-  // (2026-10-01) pending a content refresh. Pages still exist at
-  // /projects/photo and /projects/video - re-add entries here when ready.
+  {
+    title: "Photography Showcase",
+    category: "Creative",
+    highlights: [
+      "Travel photography from Thailand and Vietnam",
+      "Studio portrait session shot in silhouette",
+      "Shot on a Fujifilm XM5, edited in Lightroom",
+    ],
+    image: "/images/photography/IMG_0285.webp",
+    link: "/projects/photo",
+    fit: "contain",
+  },
+  {
+    title: "Videography Showcase",
+    category: "Creative",
+    highlights: [
+      "Fashion and motion studio shoot",
+      "Cinematic product reveal",
+      "Shot on a DJI Osmo Pocket 3, edited in Premiere Pro",
+    ],
+    image: "/images/videography_cover.webp",
+    link: "/projects/video",
+    fit: "cover",
+  },
 ];
