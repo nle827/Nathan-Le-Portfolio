@@ -4,7 +4,7 @@ import ProjectDetailsClient, { TechStackCategory } from "../../components/Projec
 
 const projectMainImage = "/images/homze_logo.webp";
 
-const aboutText = `Homze is an interior-trades home-improvement company that runs its entire sales pipeline through Salesforce: flooring, painting, roofing, siding. I joined as one of two developers and owned the interior-trades side of that pipeline. The biggest project was replacing a third-party project management tool with a Salesforce-native system I designed and built myself, covering everything from a signed estimate to the final contractor invoice. I also built a guest-facing Experience Cloud portal so clients can check on a job without calling in, and I contributed to an internal Python compiler that handles pricing across all 8 of the company's trade modules.`;
+const aboutText = `Homze is an interior-trades home-improvement company that runs its entire sales pipeline through Salesforce: flooring, painting, roofing, siding. I joined as one of two developers and owned the interior-trades side of that pipeline. The biggest project was replacing a third-party project management tool with a Salesforce-native system I designed and built myself, covering everything from a signed estimate to the final contractor invoice. I also built a guest-facing Experience Cloud portal so clients can check on a job without calling in, and I contributed to an internal Python compiler that handles pricing across all 8 of the company's trade modules. Client code stays private, so I rebuilt the core idea from scratch as Trueline, a public demo where one job moves from estimate to invoice to paid receipt (source at github.com/nle827/trueline).`;
 
 const techStack: TechStackCategory[] = [
   {
@@ -43,6 +43,8 @@ export default function HomzePage() {
       title="Homze"
       role="Salesforce Developer"
       dates="Aug 2025 – Aug 2026"
+      url="https://trueline-iota.vercel.app"
+      urlLabel="Open Live Demo"
       about={aboutText}
       mainImage={projectMainImage}
       imageFitConfig={imageFitConfig}

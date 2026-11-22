@@ -24,6 +24,7 @@ type ProjectDetailsProps = {
   role?: string;
   dates?: string;
   url?: string;
+  urlLabel?: string;
   about: string;
   mainImage: string;
   mainImageBg?: "dark" | "light";
@@ -42,6 +43,7 @@ export default function ProjectDetailsClient({
   role,
   dates,
   url,
+  urlLabel,
   about,
   mainImage,
   mainImageBg = "dark",
@@ -86,7 +88,7 @@ export default function ProjectDetailsClient({
             {url && (
               <a href={url} target="_blank" rel="noopener noreferrer">
                 <ClickButton className="inline-block px-4 py-2 rounded-full bg-[var(--olive-600)] text-white hover:bg-[var(--olive-700)] transition text-sm font-medium">
-                  View Website
+                  {urlLabel ?? "View Website"}
                 </ClickButton>
               </a>
             )}
