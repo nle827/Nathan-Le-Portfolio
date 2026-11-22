@@ -35,3 +35,6 @@ yarn-error.log*
 # tooling unrelated to this project
 .sf/
 .sfdx/
+
+# Private working notes (kept in the private-notes repo)
+/PORTFOLIO_ANALYSIS.md
