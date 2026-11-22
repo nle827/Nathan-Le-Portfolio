@@ -81,7 +81,7 @@ const skillIcons: Record<string, IconType> = {
 const stats = [
   { value: "2", label: "Brands Founded & Run" },
   { value: "9+", label: "Roles & Projects" },
-  { value: "1", label: "Brand Founded" },
+  { value: "B.S.", label: "Computer Science, UCR" },
 ];
 
 const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, education, contactInfo, marginTop }) => {
