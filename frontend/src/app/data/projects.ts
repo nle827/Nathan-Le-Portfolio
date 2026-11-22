@@ -30,6 +30,20 @@ export const workItems: ProjectProps[] = [
     fit: "contain",
   },
   {
+    title: "Shinsei Line",
+    role: "Founder & Creative Director",
+    dates: "2026",
+    category: "Experience",
+    highlights: [
+      "Developed a wool overcoat across 2 factories and 3 sample rounds",
+      "Directed a crewed campaign with VFX; edited in DaVinci Resolve",
+      "Custom Shopify storefront (Liquid) with a numbered-edition preorder",
+    ],
+    image: "/images/shinsei_cover.webp",
+    link: "https://nathan-le-portfolio-v2.vercel.app/shinsei",
+    fit: "cover",
+  },
+  {
     title: "Menacity Clothing",
     role: "Founder",
     dates: "Aug 2023 – Dec 2025",
