@@ -119,13 +119,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({ aboutText, skills, educatio
               <h3 className="text-xl font-bold text-stone-900 text-center">Nathan Le</h3>
               <p className="text-stone-500 text-center text-sm">Software Developer</p>
 
-              <a
-                href="/files/Nathan Le Resume 2026.pdf"
-                download
-                className="mt-2 px-6 py-2.5 rounded-full bg-[var(--olive-600)] text-white text-sm font-medium hover:bg-[var(--olive-700)] transition-colors"
-              >
-                Download Resume
-              </a>
 
               <div className="flex gap-4 mt-2">
                 <a

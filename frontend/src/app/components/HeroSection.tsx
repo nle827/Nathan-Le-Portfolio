@@ -59,15 +59,6 @@ export default function HeroSection({ shouldReduceMotion }: HeroProps) {
             >
               View My Work
             </Link>
-            <a
-              href="/files/Nathan Le Resume 2026.pdf"
-              download
-              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full
-                         glass text-stone-700 text-sm sm:text-base font-medium
-                         hover:text-[var(--olive-700)] transition-colors"
-            >
-              Download Resume
-            </a>
           </div>
 
           <div className="flex items-center gap-5">
